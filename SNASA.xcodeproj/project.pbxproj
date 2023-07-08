@@ -11,9 +11,25 @@
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
-		FAAEB1FB2A5978F200882445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEB1F92A5978F200882445 /* Main.storyboard */; };
 		FAAEB1FD2A5978F300882445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAEB1FC2A5978F300882445 /* Assets.xcassets */; };
 		FAAEB2002A5978F300882445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEB1FE2A5978F300882445 /* LaunchScreen.storyboard */; };
+		FAAEB2102A5985EA00882445 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB20F2A5985EA00882445 /* MainView.swift */; };
+		FAAEB2122A5985F800882445 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2112A5985F800882445 /* MainController.swift */; };
+		FAAEB2142A59861500882445 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2132A59861500882445 /* MainInteractor.swift */; };
+		FAAEB2162A59861F00882445 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2152A59861F00882445 /* MainPresenter.swift */; };
+		FAAEB2182A59863100882445 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2172A59863100882445 /* MainRouter.swift */; };
+		FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2192A59864800882445 /* MainModuleBuilder.swift */; };
+		FAAEB2212A5986F400882445 /* SpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2202A5986F400882445 /* SpaceModel.swift */; };
+		FAAEB2232A5986FD00882445 /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2222A5986FD00882445 /* SpaceEntity.swift */; };
+		FAAEB2252A599E9200882445 /* TmpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2242A599E9200882445 /* TmpService.swift */; };
+		FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2272A59A48800882445 /* SpaceView.swift */; };
+		FAAEB22A2A59A49100882445 /* SpaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2292A59A49100882445 /* SpaceController.swift */; };
+		FAAEB22C2A59A49E00882445 /* SpaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB22B2A59A49E00882445 /* SpaceInteractor.swift */; };
+		FAAEB22E2A59A4B500882445 /* SpacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB22D2A59A4B500882445 /* SpacePresenter.swift */; };
+		FAAEB2302A59A4BD00882445 /* SpaceRouner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB22F2A59A4BD00882445 /* SpaceRouner.swift */; };
+		FAAEB2322A59A4D200882445 /* SpaceModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2312A59A4D200882445 /* SpaceModuleBuilder.swift */; };
+		FAAEB2352A59B65200882445 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2342A59B65200882445 /* BaseView.swift */; };
+		FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2362A59B65900882445 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +40,26 @@
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F72A5978F200882445 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAAEB1FA2A5978F200882445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAAEB1FC2A5978F300882445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAEB1FF2A5978F300882445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAEB2012A5978F300882445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAEB20F2A5985EA00882445 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FAAEB2112A5985F800882445 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FAAEB2132A59861500882445 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		FAAEB2152A59861F00882445 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		FAAEB2172A59863100882445 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		FAAEB2192A59864800882445 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
+		FAAEB2202A5986F400882445 /* SpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModel.swift; sourceTree = "<group>"; };
+		FAAEB2222A5986FD00882445 /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
+		FAAEB2242A599E9200882445 /* TmpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpService.swift; sourceTree = "<group>"; };
+		FAAEB2272A59A48800882445 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
+		FAAEB2292A59A49100882445 /* SpaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceController.swift; sourceTree = "<group>"; };
+		FAAEB22B2A59A49E00882445 /* SpaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInteractor.swift; sourceTree = "<group>"; };
+		FAAEB22D2A59A4B500882445 /* SpacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePresenter.swift; sourceTree = "<group>"; };
+		FAAEB22F2A59A4BD00882445 /* SpaceRouner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceRouner.swift; sourceTree = "<group>"; };
+		FAAEB2312A59A4D200882445 /* SpaceModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModuleBuilder.swift; sourceTree = "<group>"; };
+		FAAEB2342A59B65200882445 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		FAAEB2362A59B65900882445 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +88,6 @@
 				5753A145351DC37173FDEDF3 /* Pods-SNASA.debug.xcconfig */,
 				CDE9BC681BD53FDF8B306378 /* Pods-SNASA.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +112,103 @@
 		FAAEB1F22A5978F200882445 /* SNASA */ = {
 			isa = PBXGroup;
 			children = (
+				FAAEB20E2A5985C800882445 /* Modules */,
+				FAAEB21E2A5986A800882445 /* Services */,
+				FAAEB21D2A59869400882445 /* Repositories */,
+				FAAEB20C2A597FC500882445 /* System */,
+				FAAEB1F72A5978F200882445 /* ViewController.swift */,
+			);
+			path = SNASA;
+			sourceTree = "<group>";
+		};
+		FAAEB20C2A597FC500882445 /* System */ = {
+			isa = PBXGroup;
+			children = (
 				FAAEB1F32A5978F200882445 /* AppDelegate.swift */,
 				FAAEB1F52A5978F200882445 /* SceneDelegate.swift */,
-				FAAEB1F72A5978F200882445 /* ViewController.swift */,
-				FAAEB1F92A5978F200882445 /* Main.storyboard */,
 				FAAEB1FC2A5978F300882445 /* Assets.xcassets */,
 				FAAEB1FE2A5978F300882445 /* LaunchScreen.storyboard */,
 				FAAEB2012A5978F300882445 /* Info.plist */,
 			);
-			path = SNASA;
+			path = System;
+			sourceTree = "<group>";
+		};
+		FAAEB20D2A5985B900882445 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB20F2A5985EA00882445 /* MainView.swift */,
+				FAAEB2112A5985F800882445 /* MainController.swift */,
+				FAAEB2132A59861500882445 /* MainInteractor.swift */,
+				FAAEB2152A59861F00882445 /* MainPresenter.swift */,
+				FAAEB2172A59863100882445 /* MainRouter.swift */,
+				FAAEB2192A59864800882445 /* MainModuleBuilder.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FAAEB20E2A5985C800882445 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2262A59A40200882445 /* Space */,
+				FAAEB20D2A5985B900882445 /* Main */,
+				FAAEB2332A59B63C00882445 /* Base */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FAAEB21C2A59866800882445 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2222A5986FD00882445 /* SpaceEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FAAEB21D2A59869400882445 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB21F2A5986C000882445 /* Models */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FAAEB21E2A5986A800882445 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB21C2A59866800882445 /* Entities */,
+				FAAEB2242A599E9200882445 /* TmpService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAAEB21F2A5986C000882445 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2202A5986F400882445 /* SpaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAAEB2262A59A40200882445 /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2272A59A48800882445 /* SpaceView.swift */,
+				FAAEB2292A59A49100882445 /* SpaceController.swift */,
+				FAAEB22B2A59A49E00882445 /* SpaceInteractor.swift */,
+				FAAEB22D2A59A4B500882445 /* SpacePresenter.swift */,
+				FAAEB22F2A59A4BD00882445 /* SpaceRouner.swift */,
+				FAAEB2312A59A4D200882445 /* SpaceModuleBuilder.swift */,
+			);
+			path = Space;
+			sourceTree = "<group>";
+		};
+		FAAEB2332A59B63C00882445 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2342A59B65200882445 /* BaseView.swift */,
+				FAAEB2362A59B65900882445 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +273,6 @@
 			files = (
 				FAAEB2002A5978F300882445 /* LaunchScreen.storyboard in Resources */,
 				FAAEB1FD2A5978F300882445 /* Assets.xcassets in Resources */,
-				FAAEB1FB2A5978F200882445 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,22 +326,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */,
+				FAAEB2302A59A4BD00882445 /* SpaceRouner.swift in Sources */,
+				FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */,
+				FAAEB22C2A59A49E00882445 /* SpaceInteractor.swift in Sources */,
+				FAAEB2252A599E9200882445 /* TmpService.swift in Sources */,
+				FAAEB2322A59A4D200882445 /* SpaceModuleBuilder.swift in Sources */,
+				FAAEB22E2A59A4B500882445 /* SpacePresenter.swift in Sources */,
+				FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */,
+				FAAEB2182A59863100882445 /* MainRouter.swift in Sources */,
+				FAAEB2212A5986F400882445 /* SpaceModel.swift in Sources */,
+				FAAEB2102A5985EA00882445 /* MainView.swift in Sources */,
+				FAAEB22A2A59A49100882445 /* SpaceController.swift in Sources */,
 				FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */,
 				FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */,
+				FAAEB2232A5986FD00882445 /* SpaceEntity.swift in Sources */,
+				FAAEB2122A5985F800882445 /* MainController.swift in Sources */,
+				FAAEB2162A59861F00882445 /* MainPresenter.swift in Sources */,
+				FAAEB2352A59B65200882445 /* BaseView.swift in Sources */,
+				FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */,
+				FAAEB2142A59861500882445 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FAAEB1F92A5978F200882445 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAAEB1FA2A5978F200882445 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAAEB1FE2A5978F300882445 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,10 +486,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SNASA/Info.plist;
+				INFOPLIST_FILE = SNASA/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -389,10 +515,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SNASA/Info.plist;
+				INFOPLIST_FILE = SNASA/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
