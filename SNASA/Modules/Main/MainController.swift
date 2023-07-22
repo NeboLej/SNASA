@@ -24,13 +24,13 @@ class MainController: BaseViewController<MainView>, MainControllerProtocol {
     
     func showDate(date: String) {
         DispatchQueue.main.async {
-            self.mainView.dateLab.text = date
+//            self.mainView.dateLab.text = date
         }
     }
     
     func showTwo(two: Int) {
         DispatchQueue.main.async {
-            self.mainView.two.text = two.description
+//            self.mainView.two.text = two.description
         }
     }
     

@@ -12,7 +12,6 @@ class MainView: BaseView {
     
     lazy var todayLab: UILabel = {
         var label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.textAlignment = .left
@@ -22,7 +21,6 @@ class MainView: BaseView {
     
     lazy var nasaLab: UILabel = {
         var label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25, weight: .ultraLight)
         label.textAlignment = .right
@@ -32,19 +30,9 @@ class MainView: BaseView {
     
     lazy var todaySpaceView = SpaceCartView(image: "testImage", title: "test name")
     
-    let dateLab: UILabel = {
-        var label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
-        return label
-    }()
-    
-    let two: UILabel = {
-        var label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .green
-        return label
-    }()
+    lazy var todayContainerView = UIView()
+    lazy var scrollView = UIScrollView()
+    lazy var contentView = UIView()
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -53,11 +41,16 @@ class MainView: BaseView {
     
     override func setViews() {
         super.setViews()
-        addSubview(todayLab)
-        addSubview(nasaLab)
-        addSubview(todaySpaceView)
-        addSubview(dateLab)
-        addSubview(two)
+        
+        todayContainerView.addSubview(todayLab)
+        todayContainerView.addSubview(nasaLab)
+        todayContainerView.addSubview(todaySpaceView)
+        
+        contentView.addSubview(todayContainerView)
+        
+        scrollView.addSubview(contentView)
+        
+        addSubview(scrollView)
     }
     
     func configureGradientLayer(){
@@ -72,37 +65,36 @@ class MainView: BaseView {
     override func layoutViews() {
         super.layoutViews()
         
-        todayLab.snp.makeConstraints { make in
-            make.left.equalTo(24)
-            make.top.equalTo(safeAreaInsets.top + 80)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
+
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalTo(scrollView)
+            make.left.right.equalTo(self)
+            make.bottom.equalTo(scrollView)
         }
         
+        todayContainerView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(60)
+            make.left.right.equalTo(contentView).inset(20)
+            make.height.equalTo(2000)
+            make.bottom.equalTo(scrollView)
+        }
+
+        todayLab.snp.makeConstraints { make in
+            make.leading.equalTo(todayContainerView.snp.leading)
+        }
+
         nasaLab.snp.makeConstraints { make in
-            make.right.equalTo(-24)
+            make.trailing.equalTo(todayContainerView.snp.trailing)
             make.centerY.equalTo(todayLab.snp.centerY)
         }
-        
+
         todaySpaceView.snp.makeConstraints { make in
-            make.left.right.equalTo(24)
-            make.right.equalTo(-24)
             make.top.equalTo(todayLab.snp.bottom).offset(8)
+            make.width.equalTo(todayContainerView.snp.width)
             make.height.equalTo(300)
         }
-        
-//        dateLab.snp.makeConstraints { make in
-//            make.left.right.equalTo(10)
-//            make.top.equalTo(50)
-//            make.height.equalTo(100)
-//        }
-//
-//        two.snp.makeConstraints { make in
-//            make.left.right.equalTo(10)
-//            make.top.equalTo(200)
-//            make.bottom.equalTo(50)
-//        }
-        
     }
-    
-    
-    
 }
