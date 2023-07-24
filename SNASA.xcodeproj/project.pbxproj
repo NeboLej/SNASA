@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B02FBE7AB6D0C4A58F4EA50 /* Pods_SNASA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7F0EDF9E16ECB0714A9C0F /* Pods_SNASA.framework */; };
+		FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		5753A145351DC37173FDEDF3 /* Pods-SNASA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNASA.debug.xcconfig"; path = "Target Support Files/Pods-SNASA/Pods-SNASA.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7F0EDF9E16ECB0714A9C0F /* Pods_SNASA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNASA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE9BC681BD53FDF8B306378 /* Pods-SNASA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNASA.release.xcconfig"; path = "Target Support Files/Pods-SNASA/Pods-SNASA.release.xcconfig"; sourceTree = "<group>"; };
+		FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAEB2392A59C9A000882445 /* SpaceCartView.swift */,
+				FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */,
 				FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */,
 				FAAEB2302A59A4BD00882445 /* SpaceRouner.swift in Sources */,
 				FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */,
