@@ -45,6 +45,13 @@ class SpaceCartView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func changeImage(_ image: UIImage?) {
+        imageView.image = image
+    }
+    func changeTitle(_ title: String) {
+        titleLab.text = title
+    }
+    
     private func initComponent() {
         backgroundColor = .white
         layer.cornerRadius = 26
@@ -52,7 +59,6 @@ class SpaceCartView: UIView {
         addSubview(imageView)
         addSubview(titleLab)
         initConstraints()
-        
     }
     
     private func initConstraints() {

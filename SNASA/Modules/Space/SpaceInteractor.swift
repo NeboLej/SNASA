@@ -17,16 +17,15 @@ class SpaceInteractor: SpaceInteractorProtocol {
     let spaceID: Int
     
     weak var presenter: SpacePresenterProtocol?
-    let service = TmpService()
     
     init(spaceID: Int) {
         self.spaceID = spaceID
     }
     
     func loadImage() {
-        service.loadImage { [weak self] image in
-            self?.presenter?.didLoad(image: image)
-        }
+//        service.loadImage { [weak self] image in
+//            self?.presenter?.didLoad(image: image)
+//        }
     }
     
     func getTwo() -> String {

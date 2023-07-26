@@ -8,24 +8,24 @@
 import Foundation
 
 protocol MainInteractorProtocol: AnyObject {
-    func loadDate()
-    func loadTwo()
+    func loadTodaySpace()
+    func loadLastWeekSpaces()
 }
 
 class MainInteractor: MainInteractorProtocol {
     
     weak var presenter: MainPresenterProtocol?
-    let service = TmpService()
+    let spaceSrvice = SpaceService()
     
-    func loadDate() {
-        service.loadDate { [weak self] date in
-            self?.presenter?.didLoad(date: date.description)
+    func loadTodaySpace() {
+        spaceSrvice.loadSpace(date: Date()) { [weak self] space in
+            self?.presenter?.didLoadTodaySpace(title: space.title, image: space.url)
         }
     }
     
-    func loadTwo() {
-        service.loadTwo { t in
-            self.presenter?.didLoad(two: t)
+    func loadLastWeekSpaces() {
+        spaceSrvice.loadSpaces(fromDate: Date(), toDate: Date()) { [weak self] spaces in
+            self?.presenter?.didLoadLastWeekSpaces(spaces: spaces)
         }
     }
 }

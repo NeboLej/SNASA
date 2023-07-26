@@ -10,7 +10,7 @@ import SnapKit
 
 class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    lazy var todayLab: UILabel = {
+    private lazy var todayLab: UILabel = {
         var label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -19,7 +19,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return label
     }()
     
-    lazy var nasaLab: UILabel = {
+    private lazy var nasaLab: UILabel = {
         var label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25, weight: .ultraLight)
@@ -28,7 +28,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return label
     }()
     
-    lazy var lastWeekLab: UILabel = {
+    private lazy var lastWeekLab: UILabel = {
         var label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -37,7 +37,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return label
     }()
     
-    lazy var lastWeekCollectionView: UICollectionView = {
+    private lazy var lastWeekCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -49,11 +49,13 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return cv
     }()
     
-    lazy var todaySpaceView = SpaceCartView(image: "testImage", title: "test name")
+    private lazy var todaySpaceView = SpaceCartView(image: "testImage", title: "test name")
     
-    lazy var scrollView = UIScrollView()
-    lazy var todayContainerView = UIView()
-    lazy var lastWeekContainerView = UIView()
+    private lazy var scrollView = UIScrollView()
+    private lazy var todayContainerView = UIView()
+    private lazy var lastWeekContainerView = UIView()
+    
+    private var spaces: [SpaceEntity] = []
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -76,7 +78,18 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         addSubview(scrollView)
     }
     
-    func configureGradientLayer(){
+    //MARK: - Public methods
+    func updateTodaySpaceView(image: String, title: String) {
+        todaySpaceView.changeImage(UIImage(named: image))
+        todaySpaceView.changeTitle(title)
+    }
+    
+    func updeteLastWeekSpaces(spaces: [SpaceEntity]) {
+        self.spaces = spaces
+        lastWeekCollectionView.reloadData()
+    }
+    
+    private func configureGradientLayer(){
         backgroundColor = .clear
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.black.cgColor, UIColor.systemMint.cgColor]
@@ -138,13 +151,6 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //MARK: - UICollectionViewDelegate
     
-    let testData: [SpaceEntity] = [
-        .init(date: "", explanation: "", hdurl: "", mediaType: "", serviceVersion: "", title: "1111", url: "testImage"),
-        .init(date: "", explanation: "", hdurl: "", mediaType: "", serviceVersion: "", title: "2222", url: "testImage"),
-        .init(date: "", explanation: "", hdurl: "", mediaType: "", serviceVersion: "", title: "3333", url: "testImage"),
-        .init(date: "", explanation: "", hdurl: "", mediaType: "", serviceVersion: "", title: "4444", url: "testImage"),
-    ]
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       return CGSize(width: 240, height: 270)
     }
@@ -154,12 +160,12 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        testData.count
+        spaces.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpaceCell.ID, for: indexPath) as! SpaceCell
-        cell.bind(space: testData[indexPath.item])
+        cell.bind(space: spaces[indexPath.item])
         return cell
     }
 }

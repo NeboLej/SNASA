@@ -8,8 +8,8 @@
 import UIKit
 
 protocol MainControllerProtocol: AnyObject {
-    func showDate(date: String)
-    func showTwo(two: Int)
+    func updateTodaySpace(title: String, image: String)
+    func updateLasWeekSpaces(spaces: [SpaceEntity])
 }
 
 class MainController: BaseViewController<MainView>, MainControllerProtocol {
@@ -22,18 +22,18 @@ class MainController: BaseViewController<MainView>, MainControllerProtocol {
         presenter?.viewDidLoaded()
     }
     
-    func showDate(date: String) {
+    func updateTodaySpace(title: String, image: String) {
         DispatchQueue.main.async {
-//            self.mainView.dateLab.text = date
+            self.mainView.updateTodaySpaceView(image: image, title: title)
         }
     }
     
-    func showTwo(two: Int) {
+    func updateLasWeekSpaces(spaces: [SpaceEntity]) {
         DispatchQueue.main.async {
-//            self.mainView.two.text = two.description
+            self.mainView.updeteLastWeekSpaces(spaces: spaces)
         }
     }
-    
+
     func tapSpace() {
         presenter?.didTapSpace()
     }
