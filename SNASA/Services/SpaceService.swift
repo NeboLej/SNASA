@@ -7,17 +7,25 @@
 
 import Foundation
 
-class SpaceService {
+protocol SpaceServiceProtocol {
+    func loadSpace(date: Date, completion: @escaping (SpaceEntity) -> Void )
+    func loadSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> Void )
+}
+
+class SpaceService: SpaceServiceProtocol {
+    let online: SpaceRepositoryProtocol
     
-    let repos = SpaceRepository()
+    init(online: SpaceRepositoryProtocol) {
+        self.online = online
+    }
     
     func loadSpace(date: Date, completion: @escaping (SpaceEntity) -> Void ) {
-        self.repos.getSpace(date: Date()) { model in
+        self.online.getSpace(date: Date()) { model in
             completion(SpaceEntity(model: model))
         }
     }
     
-    func loadSpaces(fromDate: Date, toDate: Date, completion: @escaping ([SpaceEntity]) -> Void ) {
+    func loadSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> Void ) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             completion([

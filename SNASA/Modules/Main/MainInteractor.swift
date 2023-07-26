@@ -15,7 +15,7 @@ protocol MainInteractorProtocol: AnyObject {
 class MainInteractor: MainInteractorProtocol {
     
     weak var presenter: MainPresenterProtocol?
-    let spaceSrvice = SpaceService()
+    let spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     
     func loadTodaySpace() {
         spaceSrvice.loadSpace(date: Date()) { [weak self] space in
@@ -24,7 +24,7 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func loadLastWeekSpaces() {
-        spaceSrvice.loadSpaces(fromDate: Date(), toDate: Date()) { [weak self] spaces in
+        spaceSrvice.loadSpaces(startDate: Date(), endDate: Date()) { [weak self] spaces in
             self?.presenter?.didLoadLastWeekSpaces(spaces: spaces)
         }
     }
