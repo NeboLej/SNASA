@@ -7,13 +7,14 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class SpaceCell: UICollectionViewCell {
     
     static let ID = "SpaceCell"
     
-    private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
+    private lazy var imageView: SDAnimatedImageView = {
+        let iv = SDAnimatedImageView()
         iv.layer.cornerRadius = 26
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = UIImage(named: imageName)
@@ -36,8 +37,8 @@ class SpaceCell: UICollectionViewCell {
     private var title: String = ""
     
     func bind(space: SpaceEntity) {
-        self.imageName = space.url
-        self.title = space.title
+        imageView.sd_setImage(with: URL(string: space.url))
+        titleLab.text = space.title
         initComponent()
     }
     
@@ -48,7 +49,6 @@ class SpaceCell: UICollectionViewCell {
         addSubview(imageView)
         addSubview(titleLab)
         initConstraints()
-        
     }
     
     private func initConstraints() {
@@ -64,6 +64,5 @@ class SpaceCell: UICollectionViewCell {
             make.height.equalTo(30)
             make.bottom.equalToSuperview().inset(30)
         }
-        
     }
 }

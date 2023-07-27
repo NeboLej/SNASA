@@ -9,7 +9,7 @@ import Foundation
 
 protocol SpaceRepositoryProtocol {
     func getSpace(date: Date, completion: @escaping (SpaceModel) -> Void)
-    func getSpaces(startdate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void)
+    func getSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void)
 }
 
 class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
@@ -22,14 +22,19 @@ class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
     }
     
     func getSpace(date: Date, completion: @escaping (SpaceModel) -> Void ) {
-        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestPlain, headers: ["date": "2023-07-27"]), responseClass: SpaceModel.self) { result in
-            print("result ---- \(result)")
+        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestPlain, headers: ["date": date.toSimpleDate()]), responseClass: SpaceModel.self) { result in
+//            print("result ---- \(result)")
             guard let result = try? result.get() else { return }
             completion(result)
         }
     }
     
-    func getSpaces(startdate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void ) {
-        
+    func getSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void ) {
+        let parameters = ["start_date": startDate.toSimpleDate(), "end_date": endDate.toSimpleDate()]
+        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestParameters(parameters: parameters), headers: [:]), responseClass: [SpaceModel].self) { result in
+//            print("result ---- \(result)")
+            guard let result = try? result.get() else { return }
+            completion(result)
+        }
     }
 }

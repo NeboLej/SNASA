@@ -55,8 +55,8 @@ class AlamofreApiClient: NetworkApiProtocol {
         switch task {
         case .requestPlain:
             return ([:], URLEncoding.default)
-        case .requestParameters(parameters: let parameters, encoding: let encoding):
-            return (parameters, encoding)
+        case .requestParameters(parameters: let parameters):
+            return (parameters, URLEncoding.default)
         }
     }
 }
@@ -64,7 +64,7 @@ class AlamofreApiClient: NetworkApiProtocol {
 
 enum Task {
     case requestPlain
-    case requestParameters(parameters: [String: Any], encoding: ParameterEncoding)
+    case requestParameters(parameters: [String: Any])
 }
 
 struct RquestOptions : TargetType {

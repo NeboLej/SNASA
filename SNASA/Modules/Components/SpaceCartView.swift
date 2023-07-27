@@ -7,11 +7,12 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class SpaceCartView: UIView {
     
-    private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
+    private lazy var imageView: SDAnimatedImageView = {
+        let iv = SDAnimatedImageView()
         iv.layer.cornerRadius = 26
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = UIImage(named: imageName)
@@ -30,9 +31,11 @@ class SpaceCartView: UIView {
         return label
     }()
     
-    private lazy var progressBar: UIProgressView = {
-        let view = UIProgressView()
-        view.progressTintColor = .systemMint
+    private lazy var activityView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.startAnimating()
+        view.style = .large
+        view.color = .systemMint
         return view
     }()
     
@@ -51,16 +54,14 @@ class SpaceCartView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func changeImage(_ image: UIImage?) {
-        imageView.image = image
-    }
-    func changeTitle(_ title: String) {
-        titleLab.text = title
+    func changeImage(_ imagePath: String) {
+        self.imageView.sd_setImage(with: URL(string: imagePath)) { _, _, _, _ in
+            self.activityView.isHidden = true
+        }
     }
     
-    func changeProgress(_ progress: Double) {
-        progressBar.progress = Float(progress)
-        progressBar.isHidden = progress == 1.0
+    func changeTitle(_ title: String) {
+        titleLab.text = title
     }
     
     private func initComponent() {
@@ -69,7 +70,7 @@ class SpaceCartView: UIView {
         
         addSubview(imageView)
         addSubview(titleLab)
-        addSubview(progressBar)
+        addSubview(activityView)
         initConstraints()
     }
     
@@ -80,10 +81,9 @@ class SpaceCartView: UIView {
             make.bottom.equalTo(titleLab.snp.top).offset(-10)
         }
         
-        progressBar.snp.makeConstraints { make in
-            make.bottom.equalTo(imageView)
-            make.left.right.equalTo(imageView).inset(15)
-            make.height.equalTo(5)
+        activityView.snp.makeConstraints { make in
+            make.center.equalTo(imageView)
+            make.height.equalTo(50)
         }
         
         titleLab.snp.makeConstraints { make in
@@ -92,7 +92,5 @@ class SpaceCartView: UIView {
             make.height.equalTo(30)
             make.bottom.equalToSuperview().inset(30)
         }
-        
     }
-    
 }

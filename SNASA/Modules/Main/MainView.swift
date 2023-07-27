@@ -79,12 +79,8 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     //MARK: - Public methods
-    func updateTodaySpaceView(image: String, title: String) {
-        UIImage.load(by: image) { image in
-            self.todaySpaceView.changeImage(image)
-        } progress: { progress in
-            self.todaySpaceView.changeProgress(progress)
-        }
+    func updateTodaySpaceView(imagePath: String, title: String) {
+        todaySpaceView.changeImage(imagePath)
         todaySpaceView.changeTitle(title)
     }
     

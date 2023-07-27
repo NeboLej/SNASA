@@ -19,12 +19,12 @@ class MainInteractor: MainInteractorProtocol {
     
     func loadTodaySpace() {
         spaceSrvice.loadSpace(date: Date()) { [weak self] space in
-            self?.presenter?.didLoadTodaySpace(title: space.title, image: space.url)
+            self?.presenter?.didLoadTodaySpace(title: space.title, image: space.hdurl)
         }
     }
     
     func loadLastWeekSpaces() {
-        spaceSrvice.loadSpaces(startDate: Date(), endDate: Date()) { [weak self] spaces in
+        spaceSrvice.loadSpaces(startDate: Date().addDay(day: -7), endDate: Date()) { [weak self] spaces in
             self?.presenter?.didLoadLastWeekSpaces(spaces: spaces)
         }
     }

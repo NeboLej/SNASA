@@ -24,7 +24,7 @@ class MainController: BaseViewController<MainView>, MainControllerProtocol {
     
     func updateTodaySpace(title: String, image: String) {
         DispatchQueue.main.async {
-            self.mainView.updateTodaySpaceView(image: image, title: title)
+            self.mainView.updateTodaySpaceView(imagePath: image, title: title)
         }
     }
     
