@@ -30,6 +30,12 @@ class SpaceCartView: UIView {
         return label
     }()
     
+    private lazy var progressBar: UIProgressView = {
+        let view = UIProgressView()
+        view.progressTintColor = .systemMint
+        return view
+    }()
+    
     private let imageName: String
     private let title: String
     
@@ -52,12 +58,18 @@ class SpaceCartView: UIView {
         titleLab.text = title
     }
     
+    func changeProgress(_ progress: Double) {
+        progressBar.progress = Float(progress)
+        progressBar.isHidden = progress == 1.0
+    }
+    
     private func initComponent() {
         backgroundColor = .white
         layer.cornerRadius = 26
         
         addSubview(imageView)
         addSubview(titleLab)
+        addSubview(progressBar)
         initConstraints()
     }
     
@@ -66,6 +78,12 @@ class SpaceCartView: UIView {
         imageView.snp.makeConstraints { make in
             make.top.right.left.equalToSuperview()
             make.bottom.equalTo(titleLab.snp.top).offset(-10)
+        }
+        
+        progressBar.snp.makeConstraints { make in
+            make.bottom.equalTo(imageView)
+            make.left.right.equalTo(imageView).inset(15)
+            make.height.equalTo(5)
         }
         
         titleLab.snp.makeConstraints { make in

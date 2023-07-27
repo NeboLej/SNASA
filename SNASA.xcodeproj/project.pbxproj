@@ -14,6 +14,7 @@
 		FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166022A71D30A0064950A /* ServiceFacroty.swift */; };
 		FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */; };
 		FA1495BE2A72D40E0033C287 /* AlamofreApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BD2A72D40E0033C287 /* AlamofreApiClient.swift */; };
+		FA1495C32A72E0A90033C287 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C22A72E0A90033C287 /* UIImage+.swift */; };
 		FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		FA0166022A71D30A0064950A /* ServiceFacroty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacroty.swift; sourceTree = "<group>"; };
 		FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiProtocol.swift; sourceTree = "<group>"; };
 		FA1495BD2A72D40E0033C287 /* AlamofreApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofreApiClient.swift; sourceTree = "<group>"; };
+		FA1495C22A72E0A90033C287 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		FA1495C12A72E0980033C287 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA1495C22A72E0A90033C287 /* UIImage+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		FAAEB1E72A5978F100882445 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 		FAAEB20E2A5985C800882445 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FA1495C12A72E0980033C287 /* Extension */,
 				FAAEB2382A59C97E00882445 /* Components */,
 				FAAEB2262A59A40200882445 /* Space */,
 				FAAEB20D2A5985B900882445 /* Main */,
@@ -371,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */,
+				FA1495C32A72E0A90033C287 /* UIImage+.swift in Sources */,
 				FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */,
 				FAAEB2302A59A4BD00882445 /* SpaceRouner.swift in Sources */,
 				FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */,
