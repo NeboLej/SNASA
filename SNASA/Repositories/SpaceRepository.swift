@@ -14,30 +14,22 @@ protocol SpaceRepositoryProtocol {
 
 class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
     
+    let url: String
+    
+    init(api: NetworkApiProtocol, url: String) {
+        self.url = url
+        super.init(api: api)
+    }
+    
     func getSpace(date: Date, completion: @escaping (SpaceModel) -> Void ) {
-        fetchData(target: GGG(baseURL: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", path: "", method: .get, task: .requestPlain, headers: ["date": "2023-07-26"]), responseClass: SpaceModel.self) { result in
-            
-            print("json ---- \(result)")
-            print("error ---- \(result)")
+        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestPlain, headers: ["date": "2023-07-27"]), responseClass: SpaceModel.self) { result in
+            print("result ---- \(result)")
             guard let result = try? result.get() else { return }
             completion(result)
         }
     }
     
-    
-    
-    
-    
     func getSpaces(startdate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void ) {
         
     }
-}
-
-
-struct GGG : TargetType {
-    var baseURL: String
-    var path: String
-    var method: HTTPMethod
-    var task: Task
-    var headers: [String : String]?
 }

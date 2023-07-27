@@ -13,8 +13,13 @@ class ServiceFacroty {
     static let sharedContainer: Container = {
         let container = Container()
         
-        container.register(SpaceRepositoryProtocol.self) { _ in
-            SpaceRepository()
+        container.register(NetworkApiProtocol.self) { _ in
+            AlamofreApiClient()
+        }
+        
+        container.register(SpaceRepositoryProtocol.self) { resolver in
+            let api = resolver.resolve(NetworkApiProtocol.self)!
+            return SpaceRepository(api: api, url: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
         }
         
         container.register(SpaceServiceProtocol.self) { resolver in
