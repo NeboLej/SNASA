@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1B02FBE7AB6D0C4A58F4EA50 /* Pods_SNASA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7F0EDF9E16ECB0714A9C0F /* Pods_SNASA.framework */; };
+		FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0165FC2A70049D0064950A /* SpaceService.swift */; };
+		FA0165FF2A700BFC0064950A /* SpaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0165FE2A700BFC0064950A /* SpaceRepository.swift */; };
+		FA0166012A700C290064950A /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166002A700C290064950A /* BaseRepository.swift */; };
+		FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166022A71D30A0064950A /* ServiceFacroty.swift */; };
+		FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */; };
+		FA1495BE2A72D40E0033C287 /* AlamofreApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BD2A72D40E0033C287 /* AlamofreApiClient.swift */; };
+		FA1495C52A72E8340033C287 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C42A72E8340033C287 /* Date+.swift */; };
+		FA1495C72A72F5690033C287 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C62A72F5690033C287 /* UIView+.swift */; };
+		FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
@@ -21,7 +30,6 @@
 		FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2192A59864800882445 /* MainModuleBuilder.swift */; };
 		FAAEB2212A5986F400882445 /* SpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2202A5986F400882445 /* SpaceModel.swift */; };
 		FAAEB2232A5986FD00882445 /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2222A5986FD00882445 /* SpaceEntity.swift */; };
-		FAAEB2252A599E9200882445 /* TmpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2242A599E9200882445 /* TmpService.swift */; };
 		FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2272A59A48800882445 /* SpaceView.swift */; };
 		FAAEB22A2A59A49100882445 /* SpaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2292A59A49100882445 /* SpaceController.swift */; };
 		FAAEB22C2A59A49E00882445 /* SpaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB22B2A59A49E00882445 /* SpaceInteractor.swift */; };
@@ -30,12 +38,22 @@
 		FAAEB2322A59A4D200882445 /* SpaceModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2312A59A4D200882445 /* SpaceModuleBuilder.swift */; };
 		FAAEB2352A59B65200882445 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2342A59B65200882445 /* BaseView.swift */; };
 		FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2362A59B65900882445 /* BaseViewController.swift */; };
+		FAAEB23A2A59C9A000882445 /* SpaceCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB2392A59C9A000882445 /* SpaceCartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5753A145351DC37173FDEDF3 /* Pods-SNASA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNASA.debug.xcconfig"; path = "Target Support Files/Pods-SNASA/Pods-SNASA.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7F0EDF9E16ECB0714A9C0F /* Pods_SNASA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNASA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE9BC681BD53FDF8B306378 /* Pods-SNASA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNASA.release.xcconfig"; path = "Target Support Files/Pods-SNASA/Pods-SNASA.release.xcconfig"; sourceTree = "<group>"; };
+		FA0165FC2A70049D0064950A /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
+		FA0165FE2A700BFC0064950A /* SpaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceRepository.swift; sourceTree = "<group>"; };
+		FA0166002A700C290064950A /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		FA0166022A71D30A0064950A /* ServiceFacroty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacroty.swift; sourceTree = "<group>"; };
+		FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiProtocol.swift; sourceTree = "<group>"; };
+		FA1495BD2A72D40E0033C287 /* AlamofreApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofreApiClient.swift; sourceTree = "<group>"; };
+		FA1495C42A72E8340033C287 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		FA1495C62A72F5690033C287 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +69,6 @@
 		FAAEB2192A59864800882445 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		FAAEB2202A5986F400882445 /* SpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModel.swift; sourceTree = "<group>"; };
 		FAAEB2222A5986FD00882445 /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
-		FAAEB2242A599E9200882445 /* TmpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpService.swift; sourceTree = "<group>"; };
 		FAAEB2272A59A48800882445 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
 		FAAEB2292A59A49100882445 /* SpaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceController.swift; sourceTree = "<group>"; };
 		FAAEB22B2A59A49E00882445 /* SpaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInteractor.swift; sourceTree = "<group>"; };
@@ -60,6 +77,7 @@
 		FAAEB2312A59A4D200882445 /* SpaceModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModuleBuilder.swift; sourceTree = "<group>"; };
 		FAAEB2342A59B65200882445 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FAAEB2362A59B65900882445 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FAAEB2392A59C9A000882445 /* SpaceCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +107,33 @@
 				CDE9BC681BD53FDF8B306378 /* Pods-SNASA.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA1495BF2A72DA420033C287 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */,
+				FA1495BD2A72D40E0033C287 /* AlamofreApiClient.swift */,
+				FA0166002A700C290064950A /* BaseRepository.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA1495C02A72DA620033C287 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA0166022A71D30A0064950A /* ServiceFacroty.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA1495C12A72E0980033C287 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA1495C62A72F5690033C287 /* UIView+.swift */,
+				FA1495C42A72E8340033C287 /* Date+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FAAEB1E72A5978F100882445 = {
@@ -149,6 +194,8 @@
 		FAAEB20E2A5985C800882445 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FA1495C12A72E0980033C287 /* Extension */,
+				FAAEB2382A59C97E00882445 /* Components */,
 				FAAEB2262A59A40200882445 /* Space */,
 				FAAEB20D2A5985B900882445 /* Main */,
 				FAAEB2332A59B63C00882445 /* Base */,
@@ -167,7 +214,9 @@
 		FAAEB21D2A59869400882445 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				FA1495BF2A72DA420033C287 /* Base */,
 				FAAEB21F2A5986C000882445 /* Models */,
+				FA0165FE2A700BFC0064950A /* SpaceRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -175,8 +224,9 @@
 		FAAEB21E2A5986A800882445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FA1495C02A72DA620033C287 /* Base */,
 				FAAEB21C2A59866800882445 /* Entities */,
-				FAAEB2242A599E9200882445 /* TmpService.swift */,
+				FA0165FC2A70049D0064950A /* SpaceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,6 +259,15 @@
 				FAAEB2362A59B65900882445 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		FAAEB2382A59C97E00882445 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEB2392A59C9A000882445 /* SpaceCartView.swift */,
+				FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,13 +384,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */,
 				FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */,
 				FAAEB2302A59A4BD00882445 /* SpaceRouner.swift in Sources */,
 				FAAEB2372A59B65900882445 /* BaseViewController.swift in Sources */,
 				FAAEB22C2A59A49E00882445 /* SpaceInteractor.swift in Sources */,
-				FAAEB2252A599E9200882445 /* TmpService.swift in Sources */,
 				FAAEB2322A59A4D200882445 /* SpaceModuleBuilder.swift in Sources */,
+				FAAEB23A2A59C9A000882445 /* SpaceCartView.swift in Sources */,
 				FAAEB22E2A59A4B500882445 /* SpacePresenter.swift in Sources */,
+				FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */,
+				FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */,
 				FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */,
 				FAAEB2182A59863100882445 /* MainRouter.swift in Sources */,
 				FAAEB2212A5986F400882445 /* SpaceModel.swift in Sources */,
@@ -340,8 +402,14 @@
 				FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */,
 				FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */,
 				FAAEB2232A5986FD00882445 /* SpaceEntity.swift in Sources */,
+				FA1495BE2A72D40E0033C287 /* AlamofreApiClient.swift in Sources */,
 				FAAEB2122A5985F800882445 /* MainController.swift in Sources */,
+				FA1495C52A72E8340033C287 /* Date+.swift in Sources */,
 				FAAEB2162A59861F00882445 /* MainPresenter.swift in Sources */,
+				FA0166012A700C290064950A /* BaseRepository.swift in Sources */,
+				FA1495C72A72F5690033C287 /* UIView+.swift in Sources */,
+				FA0165FF2A700BFC0064950A /* SpaceRepository.swift in Sources */,
+				FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */,
 				FAAEB2352A59B65200882445 /* BaseView.swift in Sources */,
 				FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */,
 				FAAEB2142A59861500882445 /* MainInteractor.swift in Sources */,

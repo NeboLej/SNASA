@@ -6,6 +6,7 @@ def shared_pods
   pod 'Swinject'
   pod 'SnapKit', '~> 5.6.0'
   pod 'Alamofire'
+  pod 'SDWebImage', '~> 5.0'
 end
 
 target 'SNASA' do

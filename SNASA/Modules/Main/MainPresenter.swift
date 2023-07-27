@@ -9,8 +9,8 @@ import Foundation
 
 protocol MainPresenterProtocol: AnyObject {
     func viewDidLoaded()
-    func didLoad(date: String?)
-    func didLoad(two: Int)
+    func didLoadTodaySpace(title: String, image: String)
+    func didLoadLastWeekSpaces(spaces: [SpaceEntity])
     func didTapSpace()
 }
 
@@ -26,16 +26,16 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func viewDidLoaded() {
-        interactor.loadDate()
-        interactor.loadTwo()
+        interactor.loadTodaySpace()
+        interactor.loadLastWeekSpaces()
     }
     
-    func didLoad(date: String?) {
-        viewController?.showDate(date: date ?? "No date")
+    func didLoadTodaySpace(title: String, image: String) {
+        viewController?.updateTodaySpace(title: title, image: image)
     }
     
-    func didLoad(two: Int) {
-        viewController?.showTwo(two: two)
+    func didLoadLastWeekSpaces(spaces: [SpaceEntity]) {
+        viewController?.updateLasWeekSpaces(spaces: spaces)
     }
     
     func didTapSpace() {
