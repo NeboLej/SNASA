@@ -11,7 +11,7 @@ protocol SpaceProtocol {
     
 }
 
-class SpaceEntity {
+class SpaceEntity: Hashable {
     let date: String
     let explanation: String
     let hdurl: String
@@ -28,6 +28,14 @@ class SpaceEntity {
         self.serviceVersion = serviceVersion
         self.title = title
         self.url = url
+    }
+    
+    static func == (lhs: SpaceEntity, rhs: SpaceEntity) -> Bool {
+        lhs.date == rhs.date
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(date)
     }
 }
 

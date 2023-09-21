@@ -14,12 +14,12 @@ protocol SpaceInteractorProtocol: AnyObject {
 
 class SpaceInteractor: SpaceInteractorProtocol {
     
-    let spaceID: Int
+    let spaceDate: String
     
     weak var presenter: SpacePresenterProtocol?
     
-    init(spaceID: Int) {
-        self.spaceID = spaceID
+    init(spaceDate: String) {
+        self.spaceDate = spaceDate
     }
     
     func loadImage() {
@@ -29,6 +29,6 @@ class SpaceInteractor: SpaceInteractorProtocol {
     }
     
     func getTwo() -> String {
-        spaceID > 0 ? "Minus" : "Plus"
+        spaceDate == "0" ? "Minus" : "Plus"
     }
 }

@@ -58,7 +58,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return view
     }()
     
-    private lazy var lastWeekCollectionView: UICollectionView = {
+    lazy var lastWeekCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -77,6 +77,8 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     private lazy var lastWeekContainerView = UIView()
     
     private var spaces: [SpaceEntity] = []
+    
+    var spaceListener: SpaceListenerProtocol?
 
     override func setViews() {
         super.setViews()
@@ -198,5 +200,9 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpaceCell.ID, for: indexPath) as! SpaceCell
         cell.bind(space: spaces[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        spaceListener?.onClick(space: spaces[indexPath.item])
     }
 }

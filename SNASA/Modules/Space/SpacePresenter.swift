@@ -28,8 +28,6 @@ class SpacePresenter: SpacePresenterProtocol {
     }
     
     func didLoad(image: String?) {
-        viewController?.showImage(image: image ?? "No date")
-        let two = interactor.getTwo()
-        viewController?.showTwo(two: two)
+        
     }
 }
