@@ -119,7 +119,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         
         //HEADER
         headerContainerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview().offset(35)
             make.leading.trailing.equalTo(scrollView).inset(14)
             make.height.equalTo(60)
         }
@@ -175,7 +175,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         lastWeekCollectionView.snp.makeConstraints { make in
             make.top.equalTo(lastWeekLab.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(270)
+            make.height.equalTo(330)
         }
     }
     
@@ -183,7 +183,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     //MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      return CGSize(width: 240, height: 270)
+      return CGSize(width: 240, height: 330)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
