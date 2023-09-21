@@ -9,7 +9,7 @@ import Foundation
 
 protocol SpacePresenterProtocol: AnyObject {
     func viewDidLoaded()
-    func didLoad(image: String?)
+    func didLoad(space: SpaceEntity?)
 }
 
 class SpacePresenter: SpacePresenterProtocol {
@@ -24,10 +24,11 @@ class SpacePresenter: SpacePresenterProtocol {
     }
     
     func viewDidLoaded() {
-        interactor.loadImage()
+        interactor.loadSpace()
     }
     
-    func didLoad(image: String?) {
-        
+    func didLoad(space: SpaceEntity?) {
+        guard let space = space else { return }
+        viewController?.showSpace(space: space)
     }
 }

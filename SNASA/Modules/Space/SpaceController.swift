@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SpaceControllerProtocol: AnyObject {
-    func showSpace()
+    func showSpace(space: SpaceEntity)
 }
 
 class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
@@ -19,18 +19,19 @@ class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
         super.viewDidLoad()
         
         presenter?.viewDidLoaded()
-        mainView.backgroundColor = .blue
     }
     
-    func showSpace() {
-        
-    }
-    
-    func showImage(image: String) {
-        DispatchQueue.main.async {
-            self.mainView.image.image = UIImage(named: image)
+    func showSpace(space: SpaceEntity) {
+        DispatchQueue.main.async { [weak self] in
+            self?.mainView.updateView(date: space.date, imagePath: space.url, desc: space.explanation, title: space.title.uppercased())
         }
     }
+    
+//    func showImage(image: String) {
+//        DispatchQueue.main.async {
+//            self.mainView.image.image = UIImage(named: image)
+//        }
+//    }
 
     func showTwo(two: String) {
 //        DispatchQueue.main.async {
