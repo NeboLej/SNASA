@@ -10,31 +10,52 @@ import SnapKit
 
 class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    private lazy var todayLab: UILabel = {
+    private lazy var nasaLab: UILabel = {
         var label = UILabel()
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        label.textAlignment = .left
-        label.text = "TODAY"
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        label.textAlignment = .center
+        label.text = "NASA"
         return label
     }()
     
-    private lazy var nasaLab: UILabel = {
+    private lazy var separatorView: UIView = {
+        var view = UIView()
+        view.backgroundColor = UIColor.MyColor.darkSeparatorColor
+        return view
+    }()
+    
+    private lazy var dateLab: UILabel = {
         var label = UILabel()
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25, weight: .ultraLight)
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartRegular, size: 14)
         label.textAlignment = .right
-        label.text = "NASA"
+        label.text = Date().toSimpleDate()
+        return label
+    }()
+    
+    private lazy var pointLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        label.textAlignment = .left
+        label.text = ",,,"
         return label
     }()
     
     private lazy var lastWeekLab: UILabel = {
         var label = UILabel()
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 25)
         label.textAlignment = .left
         label.text = "LAST WEEK"
         return label
+    }()
+    
+    private lazy var separatorlastWeekView: UIView = {
+        var view = UIView()
+        view.backgroundColor = UIColor.MyColor.darkSeparatorColor
+        return view
     }()
     
     private lazy var lastWeekCollectionView: UICollectionView = {
@@ -52,27 +73,27 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     private lazy var todaySpaceView = SpaceCartView(image: "testImage", title: "test name")
     
     private lazy var scrollView = UIScrollView()
-    private lazy var todayContainerView = UIView()
+    private lazy var headerContainerView = UIView()
     private lazy var lastWeekContainerView = UIView()
     
     private var spaces: [SpaceEntity] = []
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        configureGradientLayer()
-    }
-    
     override func setViews() {
         super.setViews()
+
+        backgroundColor = UIColor.MyColor.backgroundColor
         
-        todayContainerView.addSubview(todayLab)
-        todayContainerView.addSubview(nasaLab)
-        todayContainerView.addSubview(todaySpaceView)
+        headerContainerView.addSubview(nasaLab)
+        headerContainerView.addSubview(dateLab)
+        headerContainerView.addSubview(pointLab)
+        headerContainerView.addSubview(separatorView)
 
         lastWeekContainerView.addSubview(lastWeekLab)
+        lastWeekContainerView.addSubview(separatorlastWeekView)
         lastWeekContainerView.addSubview(lastWeekCollectionView)
 
-        scrollView.addSubview(todayContainerView)
+        scrollView.addSubview(headerContainerView)
+        scrollView.addSubview(todaySpaceView)
         scrollView.addSubview(lastWeekContainerView)
         
         addSubview(scrollView)
@@ -89,31 +110,50 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         lastWeekCollectionView.reloadData()
     }
     
-    private func configureGradientLayer(){
-        backgroundColor = .clear
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.black.cgColor, UIColor.systemMint.cgColor]
-        gradient.locations = [0, 2]
-        gradient.frame = bounds
-        layer.insertSublayer(gradient, at: 0)
-    }
-    
     override func layoutViews() {
         super.layoutViews()
         
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
-        todayContainerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.width.equalToSuperview().inset(20)
-            make.leading.trailing.equalTo(scrollView).inset(20)
-            make.bottom.equalTo(todaySpaceView)
+        
+        //HEADER
+        headerContainerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(35)
+            make.leading.trailing.equalTo(scrollView).inset(14)
+            make.height.equalTo(60)
         }
-
+        
+        nasaLab.snp.makeConstraints { make in
+            make.center.equalTo(headerContainerView)
+        }
+        
+        dateLab.snp.makeConstraints { make in
+            make.bottom.equalTo(nasaLab)
+            make.trailing.equalToSuperview()
+        }
+        
+        pointLab.snp.makeConstraints { make in
+            make.bottom.equalTo(nasaLab)
+            make.leading.equalToSuperview()
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.bottom.equalTo(headerContainerView)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        //TodaySpaceView
+        todaySpaceView.snp.makeConstraints { make in
+            make.top.equalTo(headerContainerView.snp.bottom).offset(10)
+            make.width.equalToSuperview().inset(14)
+            make.leading.trailing.equalTo(scrollView).inset(14)
+            make.height.equalTo(300)
+        }
+        //LAST WEEK
         lastWeekContainerView.snp.makeConstraints { make in
-            make.top.equalTo(todayContainerView.snp.bottom).offset(50)
+            make.top.equalTo(todaySpaceView.snp.bottom).offset(30)
             make.left.right.equalTo(scrollView)
             make.bottom.equalTo(lastWeekCollectionView)
             make.bottom.equalTo(scrollView)
@@ -125,26 +165,17 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
             make.height.equalTo(40)
         }
         
+        separatorlastWeekView.snp.makeConstraints { make in
+            make.leading.equalTo(lastWeekLab.snp.trailing).offset(4)
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(lastWeekLab).inset(12)
+            make.height.equalTo(1)
+        }
+        
         lastWeekCollectionView.snp.makeConstraints { make in
             make.top.equalTo(lastWeekLab.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(270)
-        }
-
-        todayLab.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalTo(todayContainerView)
-        }
-
-        nasaLab.snp.makeConstraints { make in
-            make.trailing.equalTo(todayContainerView)
-            make.centerY.equalTo(todayLab)
-        }
-
-        todaySpaceView.snp.makeConstraints { make in
-            make.top.equalTo(todayLab.snp.bottom).offset(8)
-            make.width.equalTo(todayContainerView)
-            make.height.equalTo(300)
+            make.height.equalTo(330)
         }
     }
     
@@ -152,7 +183,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
     //MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      return CGSize(width: 240, height: 270)
+      return CGSize(width: 240, height: 330)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

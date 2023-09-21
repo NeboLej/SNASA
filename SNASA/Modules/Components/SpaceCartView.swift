@@ -13,21 +13,38 @@ class SpaceCartView: UIView {
     
     private lazy var imageView: SDAnimatedImageView = {
         let iv = SDAnimatedImageView()
-        iv.layer.cornerRadius = 26
-        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = UIImage(named: imageName)
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        addSubview(iv)
         return iv
     }()
     
     private lazy var titleLab: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = UIColor.MyColor.lightTextColor
         label.text = title
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 20)
+        label.numberOfLines = 2
+        addSubview(label)
+        return label
+    }()
+    
+    private lazy var pointLab: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.MyColor.lightTextColor
+        label.text = "..."
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        addSubview(label)
+        return label
+    }()
+    
+    private lazy var todaylab: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.MyColor.lightTextColor
+        label.text = "TODAY"
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        addSubview(label)
         return label
     }()
     
@@ -35,7 +52,8 @@ class SpaceCartView: UIView {
         let view = UIActivityIndicatorView()
         view.startAnimating()
         view.style = .large
-        view.color = .systemMint
+        view.color = UIColor.MyColor.backgroundColor
+        addSubview(view)
         return view
     }()
     
@@ -65,12 +83,8 @@ class SpaceCartView: UIView {
     }
     
     private func initComponent() {
-        backgroundColor = .white
-        layer.cornerRadius = 26
+        backgroundColor = UIColor.MyColor.titleBackgroundColor
         
-        addSubview(imageView)
-        addSubview(titleLab)
-        addSubview(activityView)
         initConstraints()
     }
     
@@ -78,19 +92,28 @@ class SpaceCartView: UIView {
         
         imageView.snp.makeConstraints { make in
             make.top.right.left.equalToSuperview()
-            make.bottom.equalTo(titleLab.snp.top).offset(-10)
+            make.bottom.equalTo(titleLab.snp.top).offset(-8)
+        }
+        
+        todaylab.snp.makeConstraints { make in
+            make.right.left.equalTo(10)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-16)
+        }
+        
+        pointLab.snp.makeConstraints { make in
+            make.right.equalTo(-8)
+            make.bottom.equalToSuperview().inset(4)
+        }
+        
+        titleLab.snp.makeConstraints { make in
+            make.left.equalTo(10)
+            make.right.equalTo(-40)
+            make.bottom.equalToSuperview().inset(24)
         }
         
         activityView.snp.makeConstraints { make in
             make.center.equalTo(imageView)
             make.height.equalTo(50)
-        }
-        
-        titleLab.snp.makeConstraints { make in
-            make.left.equalTo(16)
-            make.right.equalTo(-16)
-            make.height.equalTo(30)
-            make.bottom.equalToSuperview().inset(30)
         }
     }
 }
