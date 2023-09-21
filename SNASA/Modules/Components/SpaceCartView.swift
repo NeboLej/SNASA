@@ -52,7 +52,8 @@ class SpaceCartView: UIView {
         let view = UIActivityIndicatorView()
         view.startAnimating()
         view.style = .large
-        view.color = .systemMint
+        view.color = UIColor.MyColor.backgroundColor
+        addSubview(view)
         return view
     }()
     
@@ -84,7 +85,6 @@ class SpaceCartView: UIView {
     private func initComponent() {
         backgroundColor = UIColor.MyColor.titleBackgroundColor
         
-        addSubview(activityView)
         initConstraints()
     }
     
@@ -102,7 +102,7 @@ class SpaceCartView: UIView {
         
         pointLab.snp.makeConstraints { make in
             make.right.equalTo(-8)
-            make.bottom.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview().inset(4)
         }
         
         titleLab.snp.makeConstraints { make in
