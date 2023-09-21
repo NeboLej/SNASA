@@ -8,15 +8,15 @@
 import Foundation
 
 protocol MainRouterProtocol: AnyObject {
-    func openSpace(id: Int)
+    func openSpace(date: String)
 }
 
 class MainRouter: MainRouterProtocol {
     
     weak var viewController: MainController?
     
-    func openSpace(id: Int) {
-        let vc = SpaceModuleBuilder.Build(spaceId: id)
+    func openSpace(date: String) {
+        let vc = SpaceModuleBuilder.Build(spaceDate: date)
         viewController?.present(vc, animated: true)
     }
 }

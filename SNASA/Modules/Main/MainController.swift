@@ -12,6 +12,10 @@ protocol MainControllerProtocol: AnyObject {
     func updateLasWeekSpaces(spaces: [SpaceEntity])
 }
 
+protocol SpaceListenerProtocol {
+    func onClick(space: SpaceEntity)
+}
+
 class MainController: BaseViewController<MainView>, MainControllerProtocol {
     
     var presenter: MainPresenterProtocol?
@@ -20,6 +24,7 @@ class MainController: BaseViewController<MainView>, MainControllerProtocol {
         super.viewDidLoad()
         
         presenter?.viewDidLoaded()
+        mainView.spaceListener = self
     }
     
     func updateTodaySpace(title: String, image: String) {
@@ -33,8 +38,10 @@ class MainController: BaseViewController<MainView>, MainControllerProtocol {
             self.mainView.updeteLastWeekSpaces(spaces: spaces)
         }
     }
+}
 
-    func tapSpace() {
-        presenter?.didTapSpace()
+extension MainController: SpaceListenerProtocol {
+    func onClick(space: SpaceEntity) {
+        presenter?.didTapSpace(date: space.date)
     }
 }

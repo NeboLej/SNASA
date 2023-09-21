@@ -8,12 +8,16 @@
 import Foundation
 
 protocol SpaceServiceProtocol {
+    var spaces: Set<SpaceEntity> { get }
+    
     func loadSpace(date: Date, completion: @escaping (SpaceEntity) -> Void )
     func loadSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> Void )
 }
 
 class SpaceService: SpaceServiceProtocol {
     let online: SpaceRepositoryProtocol
+    
+    var spaces: Set<SpaceEntity> = []
     
     init(online: SpaceRepositoryProtocol) {
         self.online = online
@@ -27,8 +31,10 @@ class SpaceService: SpaceServiceProtocol {
     
     func loadSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> Void ) {
         online.getSpaces(startDate: startDate, endDate: endDate) { models in
-            completion(models.map { SpaceEntity(model: $0) }.reversed())
+            let newSpaces = models.map { SpaceEntity(model: $0) }
+
+            self.spaces.formUnion(newSpaces)
+            completion(newSpaces.reversed())
         }
     }
 }
-

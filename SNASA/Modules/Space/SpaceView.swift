@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol SpaceViewProtocol {
-    
-}
-
-class SpaceView: UIView {
-    
+class SpaceView: BaseView {
     let image = UIImageView()
 }

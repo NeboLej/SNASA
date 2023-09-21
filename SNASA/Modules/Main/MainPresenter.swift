@@ -11,7 +11,7 @@ protocol MainPresenterProtocol: AnyObject {
     func viewDidLoaded()
     func didLoadTodaySpace(title: String, image: String)
     func didLoadLastWeekSpaces(spaces: [SpaceEntity])
-    func didTapSpace()
+    func didTapSpace(date: String)
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -38,7 +38,7 @@ class MainPresenter: MainPresenterProtocol {
         viewController?.updateLasWeekSpaces(spaces: spaces)
     }
     
-    func didTapSpace() {
-        router.openSpace(id: 0)
+    func didTapSpace(date: String) {
+        router.openSpace(date: date)
     }
 }

@@ -8,19 +8,22 @@
 import UIKit
 
 protocol SpaceControllerProtocol: AnyObject {
-    func showImage(image: String)
-    func showTwo(two: String)
+    func showSpace()
 }
 
-class SpaceController: UIViewController, SpaceControllerProtocol {
+class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
     
     var presenter: SpacePresenterProtocol?
-    let mainView = SpaceView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.viewDidLoaded()
+        mainView.backgroundColor = .blue
+    }
+    
+    func showSpace() {
+        
     }
     
     func showImage(image: String) {
