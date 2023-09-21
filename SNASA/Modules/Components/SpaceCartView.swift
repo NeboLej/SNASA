@@ -62,7 +62,7 @@ class SpaceCartView: UIView {
     
     init(image: String, title: String) {
         self.imageName = image
-        self.title = title
+        self.title = title.uppercased()
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         initComponent()
@@ -79,7 +79,7 @@ class SpaceCartView: UIView {
     }
     
     func changeTitle(_ title: String) {
-        titleLab.text = title
+        titleLab.text = title.uppercased()
     }
     
     private func initComponent() {

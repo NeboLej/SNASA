@@ -70,7 +70,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return cv
     }()
     
-    private lazy var todaySpaceView = SpaceCartView(image: "testImage", title: "test name")
+    private lazy var todaySpaceView = SpaceCartView(image: "", title: "")
     
     private lazy var scrollView = UIScrollView()
     private lazy var headerContainerView = UIView()

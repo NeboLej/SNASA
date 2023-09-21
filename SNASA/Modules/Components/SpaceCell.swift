@@ -32,7 +32,7 @@ class SpaceCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = UIColor.MyColor.darkTextColor
         label.font = UIFont(name: UIFont.MyFont.standartBold, size: 20)
-        label.text = title
+        label.text = title.uppercased()
         label.numberOfLines = 2
         label.textAlignment = .left
         return label
@@ -73,7 +73,7 @@ class SpaceCell: UICollectionViewCell {
     
     func bind(space: SpaceEntity) {
         imageView.sd_setImage(with: URL(string: space.url))
-        titleLab.text = space.title
+        titleLab.text = space.title.uppercased()
         descLab.text = space.explanation
         dateLab.text = space.date
         initComponent()
@@ -127,7 +127,7 @@ class SpaceCell: UICollectionViewCell {
         }
         
         pointLab.snp.makeConstraints { make in
-            make.centerY.equalTo(dateLab).inset(10)
+            make.bottom.equalToSuperview().inset(4)
             make.leading.equalToSuperview().inset(8)
         }
     }
