@@ -19,5 +19,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OldStandardTT-Bold.ttf</string>
+		<string>OldStandardTT-Italic.ttf</string>
+		<string>OldStandardTT-Regular.ttf</string>
+		<string>iowanoldstyle_bold.otf</string>
+	</array>
 </dict>
 </plist>
