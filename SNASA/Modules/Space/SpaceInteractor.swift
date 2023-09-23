@@ -8,12 +8,12 @@
 import Foundation
 
 protocol SpaceInteractorProtocol: AnyObject {
-    func loadImage()
-    func getTwo() -> String
+    func loadSpace()
 }
 
 class SpaceInteractor: SpaceInteractorProtocol {
     
+    let spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     let spaceDate: String
     
     weak var presenter: SpacePresenterProtocol?
@@ -22,13 +22,8 @@ class SpaceInteractor: SpaceInteractorProtocol {
         self.spaceDate = spaceDate
     }
     
-    func loadImage() {
-//        service.loadImage { [weak self] image in
-//            self?.presenter?.didLoad(image: image)
-//        }
-    }
-    
-    func getTwo() -> String {
-        spaceDate == "0" ? "Minus" : "Plus"
+    func loadSpace() {
+        let space = spaceSrvice.spaces.first(where: { $0.date == spaceDate })
+        presenter?.didLoad(space: space)
     }
 }
