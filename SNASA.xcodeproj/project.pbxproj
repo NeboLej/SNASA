@@ -18,6 +18,12 @@
 		FA1495C72A72F5690033C287 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C62A72F5690033C287 /* UIView+.swift */; };
 		FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */; };
 		FA6BE9D92ABF529F0030242B /* NotoSansThaiLooped-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */; };
+		FA6BE9DC2ABF59020030242B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DB2ABF59020030242B /* SearchView.swift */; };
+		FA6BE9DE2ABF590F0030242B /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DD2ABF590F0030242B /* SearchController.swift */; };
+		FA6BE9E02ABF591B0030242B /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DF2ABF591B0030242B /* SearchInteractor.swift */; };
+		FA6BE9E22ABF59250030242B /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E12ABF59250030242B /* SearchPresenter.swift */; };
+		FA6BE9E42ABF59360030242B /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E32ABF59360030242B /* SearchRouter.swift */; };
+		FA6BE9E62ABF59460030242B /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
@@ -62,6 +68,12 @@
 		FA1495C62A72F5690033C287 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThaiLooped-Regular.ttf"; sourceTree = "<group>"; };
+		FA6BE9DB2ABF59020030242B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FA6BE9DD2ABF590F0030242B /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		FA6BE9DF2ABF591B0030242B /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		FA6BE9E12ABF59250030242B /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		FA6BE9E32ABF59360030242B /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +162,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FA6BE9DA2ABF58E70030242B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FA6BE9DB2ABF59020030242B /* SearchView.swift */,
+				FA6BE9DD2ABF590F0030242B /* SearchController.swift */,
+				FA6BE9DF2ABF591B0030242B /* SearchInteractor.swift */,
+				FA6BE9E12ABF59250030242B /* SearchPresenter.swift */,
+				FA6BE9E32ABF59360030242B /* SearchRouter.swift */,
+				FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		FAAEB1E72A5978F100882445 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +237,7 @@
 				FAAEB2382A59C97E00882445 /* Components */,
 				FAAEB2262A59A40200882445 /* Space */,
 				FAAEB20D2A5985B900882445 /* Main */,
+				FA6BE9DA2ABF58E70030242B /* Search */,
 				FAAEB2332A59B63C00882445 /* Base */,
 			);
 			path = Modules;
@@ -418,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6BE9E02ABF591B0030242B /* SearchInteractor.swift in Sources */,
 				FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */,
 				FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */,
 				FAC875CD2ABC64E80084AFB4 /* Font+.swift in Sources */,
@@ -429,14 +456,17 @@
 				FAAEB22E2A59A4B500882445 /* SpacePresenter.swift in Sources */,
 				FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */,
 				FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */,
+				FA6BE9E42ABF59360030242B /* SearchRouter.swift in Sources */,
 				FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */,
 				FAAEB2182A59863100882445 /* MainRouter.swift in Sources */,
 				FAAEB2212A5986F400882445 /* SpaceModel.swift in Sources */,
 				FAAEB2102A5985EA00882445 /* MainView.swift in Sources */,
 				FAAEB22A2A59A49100882445 /* SpaceController.swift in Sources */,
 				FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */,
+				FA6BE9E22ABF59250030242B /* SearchPresenter.swift in Sources */,
 				FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */,
 				FAAEB2232A5986FD00882445 /* SpaceEntity.swift in Sources */,
+				FA6BE9DE2ABF590F0030242B /* SearchController.swift in Sources */,
 				FA1495BE2A72D40E0033C287 /* AlamofreApiClient.swift in Sources */,
 				FAAEB2122A5985F800882445 /* MainController.swift in Sources */,
 				FA1495C52A72E8340033C287 /* Date+.swift in Sources */,
@@ -446,6 +476,8 @@
 				FA0165FF2A700BFC0064950A /* SpaceRepository.swift in Sources */,
 				FAC875C32ABC5F830084AFB4 /* Color+.swift in Sources */,
 				FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */,
+				FA6BE9DC2ABF59020030242B /* SearchView.swift in Sources */,
+				FA6BE9E62ABF59460030242B /* SearchModuleBuilder.swift in Sources */,
 				FAAEB2352A59B65200882445 /* BaseView.swift in Sources */,
 				FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */,
 				FAAEB2142A59861500882445 /* MainInteractor.swift in Sources */,
