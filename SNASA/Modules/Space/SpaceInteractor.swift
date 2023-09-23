@@ -26,8 +26,4 @@ class SpaceInteractor: SpaceInteractorProtocol {
         let space = spaceSrvice.spaces.first(where: { $0.date == spaceDate })
         presenter?.didLoad(space: space)
     }
-    
-    func getTwo() -> String {
-        spaceDate == "0" ? "Minus" : "Plus"
-    }
 }

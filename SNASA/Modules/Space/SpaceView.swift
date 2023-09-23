@@ -37,6 +37,15 @@ class SpaceView: BaseView {
         return label
     }()
     
+    private lazy var pointLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 45)
+        label.textAlignment = .center
+        label.text = "..."
+        return label
+    }()
+    
     private lazy var separatorView: UIView = {
         var view = UIView()
         view.backgroundColor = UIColor.MyColor.darkSeparatorColor
@@ -68,7 +77,7 @@ class SpaceView: BaseView {
     private lazy var descLab: UILabel = {
         let textView = UILabel()
         textView.textColor = UIColor.MyColor.darkTextColor
-        textView.font = UIFont(name: UIFont.MyFont.readTextBold, size: 20)
+        textView.font = UIFont(name: UIFont.MyFont.readText, size: 20)
         textView.numberOfLines = 0
         return textView
     }()
@@ -89,11 +98,9 @@ class SpaceView: BaseView {
     
     func updateView(date: String, imagePath: String, desc: String, title: String) {
         dateLab.text = date
-        descLab.text = desc
         titleLab.text = title
-        imageView.sd_setImage(with: URL(string: imagePath)) { _, _, _, _ in
-//            self.activityView.isHidden = true
-        }
+        imageView.sd_setImage(with: URL(string: imagePath))
+        descLab.attributedText = uppercaseFirstChar(text: desc)
     }
     
     override func setViews() {
@@ -105,12 +112,19 @@ class SpaceView: BaseView {
         headerContainerView.addSubview(separatorView)
         addSubview(headerContainerView)
         
+        scrollView.addSubview(pointLab)
         scrollView.addSubview(titileBackgroundView)
         scrollView.addSubview(titleLab)
         scrollView.addSubview(imageView)
         scrollView.addSubview(descLab)
         
         addSubview(scrollView)
+    }
+    
+    private func uppercaseFirstChar(text: String) -> NSAttributedString {
+        let content = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: UIFont(name: UIFont.MyFont.readText, size: 18)!])
+        content.setAttributes([NSAttributedString.Key.font: UIFont(name: UIFont.MyFont.readText, size: 35)!], range: NSRange(location: 0, length: 1))
+        return content
     }
     
     override func layoutViews() {
@@ -143,6 +157,7 @@ class SpaceView: BaseView {
             make.height.equalTo(1)
         }
         
+        //CONTENT
         scrollView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(headerContainerView.snp.bottom).offset(10)
@@ -164,9 +179,14 @@ class SpaceView: BaseView {
             make.bottom.equalTo(titleLab.snp.bottom).offset(16)
         }
         
+        pointLab.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titileBackgroundView.snp.bottom).offset(4)
+        }
+        
         descLab.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(20)
-            make.top.equalTo(titileBackgroundView.snp.bottom).offset(10)
+            make.top.equalTo(pointLab.snp.bottom).offset(-16)
         }
     }
 }

@@ -13,6 +13,6 @@ extension UIFont {
         static let standartRegular = "OldStandardTT-Regular"
         static let standartBold = "OldStandardTT-Bold"
         static let standartItalic = "OldStandardTT-Italic"
-        static let readTextBold = "iowanoldstyle_bold"
+        static let readText = "NotoSansThaiLooped-Regular"
     }
 }

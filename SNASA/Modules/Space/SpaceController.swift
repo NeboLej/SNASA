@@ -26,16 +26,4 @@ class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
             self?.mainView.updateView(date: space.date, imagePath: space.url, desc: space.explanation, title: space.title.uppercased())
         }
     }
-    
-//    func showImage(image: String) {
-//        DispatchQueue.main.async {
-//            self.mainView.image.image = UIImage(named: image)
-//        }
-//    }
-
-    func showTwo(two: String) {
-//        DispatchQueue.main.async {
-//            self.mainView.two.text = two.description
-//        }
-    }
 }
