@@ -11,6 +11,40 @@ import SDWebImage
 
 final class SearchView: BaseView {
     
+    private lazy var dateLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 18)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private lazy var leftPointLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        label.textAlignment = .left
+        label.text = ",,,"
+        return label
+    }()
+
+    private lazy var rightPointLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.darkTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 40)
+        label.textAlignment = .right
+        label.text = ",,,"
+        return label
+    }()
+    
+    private lazy var separatorView: UIView = {
+        var view = UIView()
+        view.backgroundColor = UIColor.MyColor.darkSeparatorColor
+        return view
+    }()
+    
+    private lazy var headerContainerView = UIView()
+    
     private lazy var datePicker: UIDatePicker = {
         let dp = UIDatePicker()
         dp.datePickerMode = .date
@@ -30,11 +64,27 @@ final class SearchView: BaseView {
     
     private lazy var getButton: UIButton = {
         let button = UIButton(type: .system)
-        let attr = NSMutableAttributedString(string: "Get", attributes: [NSAttributedString.Key.font: UIFont(name: UIFont.MyFont.standartRegular, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.MyColor.darkTextColor!])
+        let attr = NSMutableAttributedString(string: "Get", attributes: [NSAttributedString.Key.font: UIFont(name: UIFont.MyFont.standartRegular, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.MyColor.lightTextColor!])
         button.setAttributedTitle(attr, for: .normal)
-        button.backgroundColor = UIColor.MyColor.backgroundColor
+        button.backgroundColor = UIColor.MyColor.titleBackgroundColor2
         button.addTarget(self, action: #selector(onGet), for: .touchUpInside)
         return button
+    }()
+    
+    private lazy var cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attr = NSMutableAttributedString(string: "Cancel", attributes: [NSAttributedString.Key.font: UIFont(name: UIFont.MyFont.standartRegular, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.MyColor.lightTextColor!])
+        button.setAttributedTitle(attr, for: .normal)
+        button.backgroundColor = UIColor.MyColor.titleBackgroundColor2
+        button.addTarget(self, action: #selector(onCancel), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var buttonStack: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .fillEqually
+        return view
     }()
     
     private lazy var searchContainerView: UIStackView = {
@@ -61,6 +111,24 @@ final class SearchView: BaseView {
         return iv
     }()
     
+    private lazy var activityView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.startAnimating()
+        view.isHidden = true
+        view.style = .large
+        view.color = UIColor.MyColor.backgroundColor
+        return view
+    }()
+    
+    private lazy var infoLab: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.MyColor.lightTextColor
+        label.font = UIFont(name: UIFont.MyFont.standartBold, size: 30)
+        label.textAlignment = .center
+        label.text = "Select date"
+        return label
+    }()
+    
     private lazy var titleLab: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.MyColor.lightTextColor
@@ -81,6 +149,7 @@ final class SearchView: BaseView {
         label.textColor = UIColor.MyColor.darkTextColor
         label.font = UIFont(name: UIFont.MyFont.standartBold, size: 45)
         label.textAlignment = .center
+        label.isHidden = true
         label.text = "..."
         return label
     }()
@@ -92,23 +161,44 @@ final class SearchView: BaseView {
         textView.numberOfLines = 0
         return textView
     }()
+ 
+    var searchListener: SearchListenerProtocol?
     
     //Action
     @objc func onSearch( _ sender: Any ) {
         toggleCalendarView(isShow: true)
     }
     
-    @objc func onGet(_ sender: Any ) {
+    @objc func onCancel( _ sender: Any ) {
         toggleCalendarView(isShow: false)
+    }
+    
+    @objc func onGet(_ sender: Any ) {
+        infoLab.isHidden = true
+        activityView.isHidden = false
+        searchListener?.search(date: datePicker.date)
     }
     
     private func toggleCalendarView(isShow: Bool) {
         UIView.animate(withDuration: 0.3) {
+            self.buttonStack.snp.updateConstraints { make in
+                make.height.equalTo(isShow ? 40 : 0)
+            }
             self.searchContainerView.snp.updateConstraints { make in
                 make.height.equalTo(isShow ? UIScreen.main.bounds.height/2 : 0)
-                make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(isShow ? 0 : 100)
             }
             self.layoutIfNeeded()
+        }
+    }
+    
+    func updateSpace( label: String, imagePath: String, desc: String, date: String) {
+        titleLab.text = label
+        descLab.text = desc
+        dateLab.text = date
+        pointLab.isHidden = false
+        toggleCalendarView(isShow: false)
+        imageView.sd_setImage(with: URL(string: imagePath)) { _, _, _, _ in
+            self.activityView.isHidden = true
         }
     }
     
@@ -121,14 +211,25 @@ final class SearchView: BaseView {
     override func setViews() {
         super.setViews()
         
-        scrollView.addSubview(imageView)
-        scrollView.addSubview(titleLab)
+        headerContainerView.addSubview(dateLab)
+        headerContainerView.addSubview(leftPointLab)
+        headerContainerView.addSubview(rightPointLab)
+        headerContainerView.addSubview(separatorView)
+        addSubview(headerContainerView)
+        
         scrollView.addSubview(titileBackgroundView)
+        scrollView.addSubview(imageView)
+        scrollView.addSubview(activityView)
+        scrollView.addSubview(infoLab)
+        scrollView.addSubview(titleLab)
         scrollView.addSubview(pointLab)
         scrollView.addSubview(descLab)
         
+        buttonStack.addArrangedSubview(getButton)
+        buttonStack.addArrangedSubview(cancelButton)
+        
         searchContainerView.addArrangedSubview(datePicker)
-        searchContainerView.addArrangedSubview(getButton)
+        searchContainerView.addArrangedSubview(buttonStack)
         
         addSubview(scrollView)
         addSubview(searchButton)
@@ -138,10 +239,38 @@ final class SearchView: BaseView {
     override func layoutViews() {
         super.layoutViews()
         
+        //HEADER
+        headerContainerView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalTo(scrollView).inset(14)
+            make.height.equalTo(60)
+        }
+        
+        dateLab.snp.makeConstraints { make in
+            make.center.equalTo(headerContainerView)
+        }
+        
+        leftPointLab.snp.makeConstraints { make in
+            make.bottom.equalTo(dateLab)
+            make.leading.equalToSuperview()
+        }
+        
+        rightPointLab.snp.makeConstraints { make in
+            make.bottom.equalTo(dateLab)
+            make.trailing.equalToSuperview()
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.bottom.equalTo(headerContainerView)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
         //CONTENT
+        
         scrollView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(headerContainerView.snp.bottom).offset(10)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
 
@@ -149,6 +278,15 @@ final class SearchView: BaseView {
             make.leading.trailing.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalTo(300)
+        }
+        
+        activityView.snp.makeConstraints { make in
+            make.center.equalTo(imageView)
+            make.height.equalTo(50)
+        }
+        
+        infoLab.snp.makeConstraints { make in
+            make.center.equalTo(imageView)
         }
 
         titleLab.snp.makeConstraints { make in
@@ -168,19 +306,19 @@ final class SearchView: BaseView {
 
         descLab.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(20)
-            make.top.equalTo(pointLab.snp.bottom).offset(-16)
+            make.top.equalTo(pointLab.snp.bottom).offset(10)
         }
         
         //SEARCH
         searchContainerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(100)
-            make.height.equalTo(0)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(UIScreen.main.bounds.height/2)
         }
         
-//        getButton.snp.makeConstraints { make in
-//            make.height.equalTo(40)
-//        }
+        buttonStack.snp.makeConstraints { make in
+            make.height.equalTo(40)
+        }
         
         searchButton.snp.makeConstraints { make in
             make.height.width.equalTo(60)

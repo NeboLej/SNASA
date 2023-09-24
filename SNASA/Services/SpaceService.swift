@@ -24,7 +24,7 @@ class SpaceService: SpaceServiceProtocol {
     }
     
     func loadSpace(date: Date, completion: @escaping (SpaceEntity) -> Void ) {
-        online.getSpace(date: Date()) { model in
+        online.getSpace(date: date) { model in
             completion(SpaceEntity(model: model))
         }
     }

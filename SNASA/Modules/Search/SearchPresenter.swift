@@ -8,7 +8,10 @@
 import Foundation
 
 protocol SearchPresenterProtocol: AnyObject {
+    func viewDidLoaded()
     
+    func getSpace(by date: Date)
+    func didLoadSpace(space: SpaceEntity)
 }
 
 class SearchPresenter: SearchPresenterProtocol {
@@ -22,4 +25,15 @@ class SearchPresenter: SearchPresenterProtocol {
         self.interactor = interactor
     }
     
+    func viewDidLoaded() {
+        
+    }
+    
+    func getSpace(by date: Date) {
+        interactor.getSpace(by: date)
+    }
+    
+    func didLoadSpace(space: SpaceEntity) {
+        viewController?.updateSpace(space: space)
+    }
 }
