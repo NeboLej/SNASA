@@ -70,9 +70,15 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return cv
     }()
     
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
+    
     private lazy var todaySpaceView = SpaceCartView(image: "", title: "")
     
-    private lazy var scrollView = UIScrollView()
     private lazy var headerContainerView = UIView()
     private lazy var lastWeekContainerView = UIView()
     
@@ -116,7 +122,8 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
         super.layoutViews()
         
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.trailing.top.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
         
         //HEADER
@@ -158,7 +165,7 @@ class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, 
             make.top.equalTo(todaySpaceView.snp.bottom).offset(30)
             make.left.right.equalTo(scrollView)
             make.bottom.equalTo(lastWeekCollectionView)
-            make.bottom.equalTo(scrollView)
+            make.bottom.equalTo(scrollView).inset(50)
         }
         
         lastWeekLab.snp.makeConstraints { make in

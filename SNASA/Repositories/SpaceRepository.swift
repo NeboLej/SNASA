@@ -22,7 +22,8 @@ class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
     }
     
     func getSpace(date: Date, completion: @escaping (SpaceModel) -> Void ) {
-        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestPlain, headers: ["date": date.toSimpleDate()]), responseClass: SpaceModel.self) { result in
+        let parameters = ["date": date.toSimpleDate()]
+        api.fetchData(target: RquestOptions(baseURL: url, path: "", method: .get, task: .requestParameters(parameters: parameters), headers: [:]), responseClass: SpaceModel.self) { result in
 //            print("result ---- \(result)")
             guard let result = try? result.get() else { return }
             completion(result)
