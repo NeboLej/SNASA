@@ -13,7 +13,7 @@ protocol MainRouterProtocol: AnyObject {
 
 class MainRouter: MainRouterProtocol {
     
-    weak var viewController: MainController?
+    weak var viewController: MainControllerProtocol?
     
     func openSpace(date: String) {
         let vc = SpaceModuleBuilder.Build(spaceDate: date)

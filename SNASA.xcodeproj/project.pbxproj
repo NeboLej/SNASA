@@ -24,6 +24,8 @@
 		FA6BE9E22ABF59250030242B /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E12ABF59250030242B /* SearchPresenter.swift */; };
 		FA6BE9E42ABF59360030242B /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E32ABF59360030242B /* SearchRouter.swift */; };
 		FA6BE9E62ABF59460030242B /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */; };
+		FA8C287F2AC21624008AD368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C287E2AC21624008AD368 /* main.swift */; };
+		FA8C28812AC21AAE008AD368 /* MainRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C28802AC21AAE008AD368 /* MainRouterTests.swift */; };
 		FA9D14332AC1D64E00CF8EC2 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */; };
 		FA9D14362AC1D6B000CF8EC2 /* MainInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */; };
 		FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */; };
@@ -93,6 +95,8 @@
 		FA6BE9E12ABF59250030242B /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		FA6BE9E32ABF59360030242B /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		FA8C287E2AC21624008AD368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA8C28802AC21AAE008AD368 /* MainRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterTests.swift; sourceTree = "<group>"; };
 		FA9D14282AC1D55300CF8EC2 /* SNASATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNASATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorMock.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				FA9D14342AC1D68B00CF8EC2 /* Mocks */,
 				FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */,
 				FAD893DB2AC1E9B200669796 /* MainInteractorTests.swift */,
+				FA8C28802AC21AAE008AD368 /* MainRouterTests.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAEB1F32A5978F200882445 /* AppDelegate.swift */,
+				FA8C287E2AC21624008AD368 /* main.swift */,
 				FAAEB1FE2A5978F300882445 /* LaunchScreen.storyboard */,
 				FAAEB1F52A5978F200882445 /* SceneDelegate.swift */,
 				FAAEB2012A5978F300882445 /* Info.plist */,
@@ -561,6 +567,7 @@
 				FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */,
 				FAD893DC2AC1E9B200669796 /* MainInteractorTests.swift in Sources */,
 				FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */,
+				FA8C28812AC21AAE008AD368 /* MainRouterTests.swift in Sources */,
 				FAD893DE2AC1EA2800669796 /* MainPresenterMock.swift in Sources */,
 				FAD893E52AC1FA7900669796 /* XCTestCase+.swift in Sources */,
 			);
@@ -604,6 +611,7 @@
 				FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */,
 				FA6BE9DC2ABF59020030242B /* SearchView.swift in Sources */,
 				FA6BE9E62ABF59460030242B /* SearchModuleBuilder.swift in Sources */,
+				FA8C287F2AC21624008AD368 /* main.swift in Sources */,
 				FAAEB2352A59B65200882445 /* BaseView.swift in Sources */,
 				FAAEB21A2A59864800882445 /* MainModuleBuilder.swift in Sources */,
 				FAAEB2142A59861500882445 /* MainInteractor.swift in Sources */,

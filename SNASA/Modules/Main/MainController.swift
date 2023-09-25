@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol MainControllerProtocol: AnyObject {
+protocol MainControllerProtocol: AnyObject where Self: UIViewController {
     func updateTodaySpace(title: String, image: String)
     func updateLasWeekSpaces(spaces: [SpaceEntity])
 }

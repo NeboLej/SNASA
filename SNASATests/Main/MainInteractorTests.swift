@@ -71,7 +71,7 @@ final class MainInteractorTests: XCTestCase {
         let expectationEntities = [SpaceEntity(date: "2000-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url")]
         spaceServiceMock?.setupLoadSpaces(entities: expectationEntities, delayMilliseconds: 500)
         presenterMock?.spaces = []
-//        sut?.spaceSrvice = spaceServiceMock!
+        
         //WHEN
         sut?.loadLastWeekSpaces()
         
@@ -80,8 +80,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertEqual(presenterMock?.spaces, expectationEntities)
     }
-    
-    
 }
         
 
