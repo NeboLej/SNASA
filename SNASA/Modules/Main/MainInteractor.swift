@@ -15,7 +15,7 @@ protocol MainInteractorProtocol: AnyObject {
 class MainInteractor: MainInteractorProtocol {
     weak var presenter: MainPresenterProtocol?
     
-    let spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
+    var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     
     func loadTodaySpace() {
         spaceSrvice.loadSpace(date: Date()) { [weak self] space in

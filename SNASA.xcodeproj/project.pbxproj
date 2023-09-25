@@ -24,6 +24,10 @@
 		FA6BE9E22ABF59250030242B /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E12ABF59250030242B /* SearchPresenter.swift */; };
 		FA6BE9E42ABF59360030242B /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E32ABF59360030242B /* SearchRouter.swift */; };
 		FA6BE9E62ABF59460030242B /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */; };
+		FA9D14332AC1D64E00CF8EC2 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */; };
+		FA9D14362AC1D6B000CF8EC2 /* MainInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */; };
+		FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */; };
+		FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D143C2AC1DA8B00CF8EC2 /* MainControllerMock.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
@@ -52,7 +56,22 @@
 		FAC875C92ABC63B50084AFB4 /* OldStandardTT-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC875C62ABC63B50084AFB4 /* OldStandardTT-Regular.ttf */; };
 		FAC875CB2ABC64A70084AFB4 /* iowanoldstyle_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAC875CA2ABC64A70084AFB4 /* iowanoldstyle_bold.otf */; };
 		FAC875CD2ABC64E80084AFB4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC875CC2ABC64E80084AFB4 /* Font+.swift */; };
+		FAD893DC2AC1E9B200669796 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD893DB2AC1E9B200669796 /* MainInteractorTests.swift */; };
+		FAD893DE2AC1EA2800669796 /* MainPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD893DD2AC1EA2800669796 /* MainPresenterMock.swift */; };
+		FAD893E12AC1EF4300669796 /* SpaceServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD893E02AC1EF4300669796 /* SpaceServiceMock.swift */; };
+		FAD893E32AC1EF5000669796 /* SpaceRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD893E22AC1EF5000669796 /* SpaceRepositoryMock.swift */; };
+		FAD893E52AC1FA7900669796 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD893E42AC1FA7900669796 /* XCTestCase+.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA9D142C2AC1D55400CF8EC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAAEB1E82A5978F200882445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAAEB1EF2A5978F200882445;
+			remoteInfo = SNASA;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5753A145351DC37173FDEDF3 /* Pods-SNASA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNASA.debug.xcconfig"; path = "Target Support Files/Pods-SNASA/Pods-SNASA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +93,12 @@
 		FA6BE9E12ABF59250030242B /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		FA6BE9E32ABF59360030242B /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		FA6BE9E52ABF59460030242B /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		FA9D14282AC1D55300CF8EC2 /* SNASATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNASATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorMock.swift; sourceTree = "<group>"; };
+		FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterMock.swift; sourceTree = "<group>"; };
+		FA9D143C2AC1DA8B00CF8EC2 /* MainControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerMock.swift; sourceTree = "<group>"; };
+		FA9D143F2AC1E51400CF8EC2 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,9 +129,21 @@
 		FAC875C62ABC63B50084AFB4 /* OldStandardTT-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OldStandardTT-Regular.ttf"; sourceTree = "<group>"; };
 		FAC875CA2ABC64A70084AFB4 /* iowanoldstyle_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iowanoldstyle_bold.otf; sourceTree = "<group>"; };
 		FAC875CC2ABC64E80084AFB4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		FAD893DB2AC1E9B200669796 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		FAD893DD2AC1EA2800669796 /* MainPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterMock.swift; sourceTree = "<group>"; };
+		FAD893E02AC1EF4300669796 /* SpaceServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceServiceMock.swift; sourceTree = "<group>"; };
+		FAD893E22AC1EF5000669796 /* SpaceRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceRepositoryMock.swift; sourceTree = "<group>"; };
+		FAD893E42AC1FA7900669796 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FA9D14252AC1D55300CF8EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAAEB1ED2A5978F200882445 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,10 +212,43 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		FA9D14292AC1D55400CF8EC2 /* SNASATests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD893DF2AC1EF2800669796 /* Mocks */,
+				FA9D14312AC1D61E00CF8EC2 /* Main */,
+				FA9D143F2AC1E51400CF8EC2 /* TestPlan.xctestplan */,
+				FAD893E42AC1FA7900669796 /* XCTestCase+.swift */,
+			);
+			path = SNASATests;
+			sourceTree = "<group>";
+		};
+		FA9D14312AC1D61E00CF8EC2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D14342AC1D68B00CF8EC2 /* Mocks */,
+				FA9D14322AC1D64E00CF8EC2 /* MainPresenterTests.swift */,
+				FAD893DB2AC1E9B200669796 /* MainInteractorTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FA9D14342AC1D68B00CF8EC2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */,
+				FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */,
+				FA9D143C2AC1DA8B00CF8EC2 /* MainControllerMock.swift */,
+				FAD893DD2AC1EA2800669796 /* MainPresenterMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		FAAEB1E72A5978F100882445 = {
 			isa = PBXGroup;
 			children = (
 				FAAEB1F22A5978F200882445 /* SNASA */,
+				FA9D14292AC1D55400CF8EC2 /* SNASATests */,
 				FAAEB1F12A5978F200882445 /* Products */,
 				8B5062B8CD33FE13CE64C5B6 /* Pods */,
 				345E2780B16594390559FEE2 /* Frameworks */,
@@ -189,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAEB1F02A5978F200882445 /* SNASA.app */,
+				FA9D14282AC1D55300CF8EC2 /* SNASATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,9 +396,36 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FAD893DF2AC1EF2800669796 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FAD893E02AC1EF4300669796 /* SpaceServiceMock.swift */,
+				FAD893E22AC1EF5000669796 /* SpaceRepositoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FA9D14272AC1D55300CF8EC2 /* SNASATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA9D14302AC1D55400CF8EC2 /* Build configuration list for PBXNativeTarget "SNASATests" */;
+			buildPhases = (
+				FA9D14242AC1D55300CF8EC2 /* Sources */,
+				FA9D14252AC1D55300CF8EC2 /* Frameworks */,
+				FA9D14262AC1D55300CF8EC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA9D142D2AC1D55400CF8EC2 /* PBXTargetDependency */,
+			);
+			name = SNASATests;
+			productName = SNASATests;
+			productReference = FA9D14282AC1D55300CF8EC2 /* SNASATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FAAEB1EF2A5978F200882445 /* SNASA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAEB2042A5978F300882445 /* Build configuration list for PBXNativeTarget "SNASA" */;
@@ -357,6 +455,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					FA9D14272AC1D55300CF8EC2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = FAAEB1EF2A5978F200882445;
+					};
 					FAAEB1EF2A5978F200882445 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -376,11 +478,19 @@
 			projectRoot = "";
 			targets = (
 				FAAEB1EF2A5978F200882445 /* SNASA */,
+				FA9D14272AC1D55300CF8EC2 /* SNASATests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FA9D14262AC1D55300CF8EC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAAEB1EE2A5978F200882445 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +550,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FA9D14242AC1D55300CF8EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA9D14332AC1D64E00CF8EC2 /* MainPresenterTests.swift in Sources */,
+				FAD893E12AC1EF4300669796 /* SpaceServiceMock.swift in Sources */,
+				FAD893E32AC1EF5000669796 /* SpaceRepositoryMock.swift in Sources */,
+				FA9D14362AC1D6B000CF8EC2 /* MainInteractorMock.swift in Sources */,
+				FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */,
+				FAD893DC2AC1E9B200669796 /* MainInteractorTests.swift in Sources */,
+				FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */,
+				FAD893DE2AC1EA2800669796 /* MainPresenterMock.swift in Sources */,
+				FAD893E52AC1FA7900669796 /* XCTestCase+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAAEB1EC2A5978F200882445 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +612,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FA9D142D2AC1D55400CF8EC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAAEB1EF2A5978F200882445 /* SNASA */;
+			targetProxy = FA9D142C2AC1D55400CF8EC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FAAEB1FE2A5978F300882445 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -498,6 +632,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FA9D142E2AC1D55400CF8EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 955DP87LHM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.SNASATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNASA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SNASA";
+			};
+			name = Debug;
+		};
+		FA9D142F2AC1D55400CF8EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 955DP87LHM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.SNASATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNASA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SNASA";
+			};
+			name = Release;
+		};
 		FAAEB2022A5978F300882445 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -673,6 +843,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FA9D14302AC1D55400CF8EC2 /* Build configuration list for PBXNativeTarget "SNASATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9D142E2AC1D55400CF8EC2 /* Debug */,
+				FA9D142F2AC1D55400CF8EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FAAEB1EB2A5978F200882445 /* Build configuration list for PBXProject "SNASA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

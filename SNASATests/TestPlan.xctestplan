@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "42948D77-D949-43BD-AC86-68006D295D6A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SNASA.xcodeproj",
+        "identifier" : "FA9D14272AC1D55300CF8EC2",
+        "name" : "SNASATests"
+      }
+    }
+  ],
+  "version" : 1
+}
