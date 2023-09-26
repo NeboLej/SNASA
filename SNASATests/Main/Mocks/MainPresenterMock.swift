@@ -14,9 +14,10 @@ class MainPresenterMock: MainPresenterProtocol {
     var title = ""
     var image = ""
     var spaces: [SpaceEntity] = []
+    var isViewDidLoaded = false
     
     func viewDidLoaded() {
-        
+        isViewDidLoaded = true
     }
     
     func didLoadTodaySpace(title: String, image: String) {
