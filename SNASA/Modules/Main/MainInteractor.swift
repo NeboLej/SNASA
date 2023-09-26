@@ -18,13 +18,13 @@ class MainInteractor: MainInteractorProtocol {
     var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     
     func loadTodaySpace() {
-        spaceSrvice.loadSpace(date: Date()) { [weak self] space in
+        spaceSrvice.getSpace(date: Date()) { [weak self] space in
             self?.presenter?.didLoadTodaySpace(title: space.title, image: space.hdurl)
         }
     }
     
     func loadLastWeekSpaces() {
-        spaceSrvice.loadSpaces(startDate: Date().addDay(day: -7), endDate: Date()) { [weak self] spaces in
+        spaceSrvice.getSpaces(startDate: Date().addDay(day: -7), endDate: Date()) { [weak self] spaces in
             self?.presenter?.didLoadLastWeekSpaces(spaces: spaces)
         }
     }

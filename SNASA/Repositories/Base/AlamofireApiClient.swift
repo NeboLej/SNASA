@@ -1,5 +1,5 @@
 //
-//  AlamofreApiClient.swift
+//  AlamofireApiClient.swift
 //  SNASA
 //
 //  Created by Nebo on 27.07.2023.
@@ -8,9 +8,9 @@
 import Foundation
 import Alamofire
 
-class AlamofreApiClient: NetworkApiProtocol {
+class AlamofireApiClient: NetworkApiProtocol {
     
-    func fetchData<M: Decodable>(target: TargetType, responseClass: M.Type, completionHandler:@escaping (Result<M, NSError>)-> Void) {
+    func fetchData<M: Decodable>(target: TargetType, responseClass: M.Type, completionHandler: @escaping (Result<M, NSError>) -> Void) {
         
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
@@ -51,7 +51,7 @@ class AlamofreApiClient: NetworkApiProtocol {
         }
     }
 
-    private func buildParams(task: Task) -> ([String: Any], ParameterEncoding){
+    private func buildParams(task: Task) -> ([String: Any], ParameterEncoding) {
         switch task {
         case .requestPlain:
             return ([:], URLEncoding.default)

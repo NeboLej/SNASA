@@ -14,7 +14,7 @@ class ServiceFacroty {
         let container = Container()
         
         container.register(NetworkApiProtocol.self) { _ in
-            AlamofreApiClient()
+            AlamofireApiClient()
         }
         
         container.register(SpaceRepositoryProtocol.self) { resolver in

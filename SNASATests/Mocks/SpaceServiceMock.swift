@@ -28,14 +28,14 @@ class SpaceServiceMock: SpaceServiceProtocol {
     
     var spaces: Set<SpaceEntity> = []
     
-    func loadSpace(date: Date, completion: @escaping (SpaceEntity) -> Void) {
+    func getSpace(date: Date, completion: @escaping (SpaceEntity) -> Void) {
         guard let entity = entity else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(delayMilliseconds) ) {
             completion(entity)
         }
     }
     
-    func loadSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> (Void)) {
+    func getSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> (Void)) {
         guard let entities = entities else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(delayMilliseconds) ) {
             completion(entities)
