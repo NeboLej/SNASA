@@ -15,7 +15,7 @@ class SearchInteractor: SearchInteractorProtocol {
     
     weak var presenter: SearchPresenterProtocol?
     
-    let spaceService = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
+    var spaceService = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     
     func getSpace(by date: Date) {
         spaceService.loadSpace(date: date) { [ weak self] space in

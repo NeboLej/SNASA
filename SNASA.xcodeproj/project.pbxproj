@@ -25,6 +25,13 @@
 		FA25259A2AC344EC005DA63A /* SpaceInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525992AC344EC005DA63A /* SpaceInteractorTests.swift */; };
 		FA25259C2AC34866005DA63A /* SpaceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25259B2AC34866005DA63A /* SpaceControllerTests.swift */; };
 		FA25259E2AC3496B005DA63A /* MainControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25259D2AC3496B005DA63A /* MainControllerTests.swift */; };
+		FA2525A22AC34E86005DA63A /* SearchInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525A12AC34E86005DA63A /* SearchInteractorMock.swift */; };
+		FA2525A42AC34E92005DA63A /* SearchPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525A32AC34E92005DA63A /* SearchPresenterMock.swift */; };
+		FA2525A62AC34E9E005DA63A /* SearchRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525A52AC34E9E005DA63A /* SearchRouterMock.swift */; };
+		FA2525A82AC34EAD005DA63A /* SearchControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525A72AC34EAD005DA63A /* SearchControllerMock.swift */; };
+		FA2525AA2AC34F7F005DA63A /* SearchInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525A92AC34F7F005DA63A /* SearchInteractorTests.swift */; };
+		FA2525AC2AC351EA005DA63A /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525AB2AC351EA005DA63A /* SearchPresenterTests.swift */; };
+		FA2525AE2AC354F5005DA63A /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525AD2AC354F5005DA63A /* DateExtensionTests.swift */; };
 		FA6BE9D92ABF529F0030242B /* NotoSansThaiLooped-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */; };
 		FA6BE9DC2ABF59020030242B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DB2ABF59020030242B /* SearchView.swift */; };
 		FA6BE9DE2ABF590F0030242B /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DD2ABF590F0030242B /* SearchController.swift */; };
@@ -104,6 +111,13 @@
 		FA2525992AC344EC005DA63A /* SpaceInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInteractorTests.swift; sourceTree = "<group>"; };
 		FA25259B2AC34866005DA63A /* SpaceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceControllerTests.swift; sourceTree = "<group>"; };
 		FA25259D2AC3496B005DA63A /* MainControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerTests.swift; sourceTree = "<group>"; };
+		FA2525A12AC34E86005DA63A /* SearchInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorMock.swift; sourceTree = "<group>"; };
+		FA2525A32AC34E92005DA63A /* SearchPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterMock.swift; sourceTree = "<group>"; };
+		FA2525A52AC34E9E005DA63A /* SearchRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouterMock.swift; sourceTree = "<group>"; };
+		FA2525A72AC34EAD005DA63A /* SearchControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerMock.swift; sourceTree = "<group>"; };
+		FA2525A92AC34F7F005DA63A /* SearchInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorTests.swift; sourceTree = "<group>"; };
+		FA2525AB2AC351EA005DA63A /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
+		FA2525AD2AC354F5005DA63A /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThaiLooped-Regular.ttf"; sourceTree = "<group>"; };
 		FA6BE9DB2ABF59020030242B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA6BE9DD2ABF590F0030242B /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -241,6 +255,27 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		FA25259F2AC34E52005DA63A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FA2525A02AC34E64005DA63A /* Mocks */,
+				FA2525A92AC34F7F005DA63A /* SearchInteractorTests.swift */,
+				FA2525AB2AC351EA005DA63A /* SearchPresenterTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FA2525A02AC34E64005DA63A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FA2525A12AC34E86005DA63A /* SearchInteractorMock.swift */,
+				FA2525A32AC34E92005DA63A /* SearchPresenterMock.swift */,
+				FA2525A52AC34E9E005DA63A /* SearchRouterMock.swift */,
+				FA2525A72AC34EAD005DA63A /* SearchControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		FA6BE9DA2ABF58E70030242B /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,8 +295,10 @@
 				FAD893DF2AC1EF2800669796 /* Mocks */,
 				FA9D14312AC1D61E00CF8EC2 /* Main */,
 				FA25258D2AC34075005DA63A /* Space */,
+				FA25259F2AC34E52005DA63A /* Search */,
 				FA9D143F2AC1E51400CF8EC2 /* TestPlan.xctestplan */,
 				FAD893E42AC1FA7900669796 /* XCTestCase+.swift */,
+				FA2525AD2AC354F5005DA63A /* DateExtensionTests.swift */,
 			);
 			path = SNASATests;
 			sourceTree = "<group>";
@@ -600,14 +637,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2525A62AC34E9E005DA63A /* SearchRouterMock.swift in Sources */,
 				FA9D14332AC1D64E00CF8EC2 /* MainPresenterTests.swift in Sources */,
+				FA2525AA2AC34F7F005DA63A /* SearchInteractorTests.swift in Sources */,
 				FA2525982AC34178005DA63A /* SpacePresenterTests.swift in Sources */,
 				FAD893E12AC1EF4300669796 /* SpaceServiceMock.swift in Sources */,
 				FA2525962AC340CA005DA63A /* SpaceControllerMock.swift in Sources */,
+				FA2525AC2AC351EA005DA63A /* SearchPresenterTests.swift in Sources */,
+				FA2525A42AC34E92005DA63A /* SearchPresenterMock.swift in Sources */,
 				FAD893E32AC1EF5000669796 /* SpaceRepositoryMock.swift in Sources */,
 				FA9D14362AC1D6B000CF8EC2 /* MainInteractorMock.swift in Sources */,
 				FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */,
+				FA2525A22AC34E86005DA63A /* SearchInteractorMock.swift in Sources */,
 				FA2525942AC340BF005DA63A /* SpaceRouterMock.swift in Sources */,
+				FA2525AE2AC354F5005DA63A /* DateExtensionTests.swift in Sources */,
 				FA25259E2AC3496B005DA63A /* MainControllerTests.swift in Sources */,
 				FAD893DC2AC1E9B200669796 /* MainInteractorTests.swift in Sources */,
 				FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */,
@@ -618,6 +661,7 @@
 				FA2525902AC340A4005DA63A /* SpaceInteractorMock.swift in Sources */,
 				FA25259A2AC344EC005DA63A /* SpaceInteractorTests.swift in Sources */,
 				FA25259C2AC34866005DA63A /* SpaceControllerTests.swift in Sources */,
+				FA2525A82AC34EAD005DA63A /* SearchControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

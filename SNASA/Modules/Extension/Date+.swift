@@ -18,7 +18,7 @@ extension Date {
         DATE_FULL_YEAR_FMT.string(from: self)
     }
     
-    func addDay(day:Int) -> Date {
-      return Calendar.current.date(byAdding: .day, value: day, to: Date())!
+    func addDay(day: Int) -> Date {
+        return Calendar.current.date(byAdding: .day, value: day, to: self)!
     }
 }

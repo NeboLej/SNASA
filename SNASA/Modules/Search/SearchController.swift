@@ -22,8 +22,6 @@ class SearchController: BaseViewController<SearchView>, SearchControllerProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.viewDidLoaded()
-        
         weak var _self = self
         mainView.searchListener = _self
     }
