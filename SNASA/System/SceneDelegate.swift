@@ -16,10 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        if isRunningTests { return }
         
         let tabbar = UITabBarController()
         
-        let mainVC = MainModuleBuilder.Build()
+        let mainVC = MainModuleBuilder.build()
         mainVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"),selectedImage: UIImage(systemName: "house.fill"))
         let searchVC = SearchModuleBuilder.build()
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "calendar.badge.minus"),selectedImage: UIImage(systemName: "calendar.badge.plus"))
@@ -28,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc = MainModuleBuilder.Build()
+        let vc = MainModuleBuilder.build()
         window.rootViewController = tabbar
         self.window = window
         window.makeKeyAndVisible()
@@ -45,6 +46,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    #if DEBUG
+    if ((getenv("runningTests")) != nil) {
+        return
+    }
+    #endif
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

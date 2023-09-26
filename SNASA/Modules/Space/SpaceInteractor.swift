@@ -13,7 +13,7 @@ protocol SpaceInteractorProtocol: AnyObject {
 
 class SpaceInteractor: SpaceInteractorProtocol {
     
-    let spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
+    var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     let spaceDate: String
     
     weak var presenter: SpacePresenterProtocol?
