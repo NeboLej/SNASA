@@ -11,7 +11,7 @@ protocol SpaceControllerProtocol: AnyObject {
     func showSpace(space: SpaceEntity)
 }
 
-class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
+final class SpaceController: BaseViewController<SpaceView>, SpaceControllerProtocol {
     
     var presenter: SpacePresenterProtocol?
     

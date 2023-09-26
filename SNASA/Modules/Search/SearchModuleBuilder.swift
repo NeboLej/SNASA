@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchModuleBuilder {
+final class SearchModuleBuilder {
     
     static func build() -> SearchController {
         let interactor = SearchInteractor()

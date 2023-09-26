@@ -14,7 +14,7 @@ protocol SpaceServiceProtocol {
     func getSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceEntity]) -> Void )
 }
 
-class SpaceService: SpaceServiceProtocol {
+final class SpaceService: SpaceServiceProtocol {
     private let online: SpaceRepositoryProtocol
     
     var spaces: Set<SpaceEntity> = []

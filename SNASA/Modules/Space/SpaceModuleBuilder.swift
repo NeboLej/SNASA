@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SpaceModuleBuilder {
+final class SpaceModuleBuilder {
     
     static func build(spaceDate: String) -> SpaceController {
         let interactor = SpaceInteractor(spaceDate: spaceDate)

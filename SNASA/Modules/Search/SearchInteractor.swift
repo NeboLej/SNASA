@@ -11,7 +11,7 @@ protocol SearchInteractorProtocol: AnyObject {
     func getSpace(by date: Date)
 }
 
-class SearchInteractor: SearchInteractorProtocol {
+final class SearchInteractor: SearchInteractorProtocol {
     
     weak var presenter: SearchPresenterProtocol?
     

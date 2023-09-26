@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class MainView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private lazy var nasaLab: UILabel = {
         var label = UILabel()

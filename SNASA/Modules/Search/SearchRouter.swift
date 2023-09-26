@@ -11,7 +11,7 @@ protocol SearchRouterProtocol: AnyObject {
     
 }
 
-class SearchRouter: SearchRouterProtocol {
+final class SearchRouter: SearchRouterProtocol {
     
     weak var viewController: SearchControllerProtocol?
 }

@@ -12,7 +12,7 @@ protocol MainInteractorProtocol: AnyObject {
     func loadLastWeekSpaces()
 }
 
-class MainInteractor: MainInteractorProtocol {
+final class MainInteractor: MainInteractorProtocol {
     weak var presenter: MainPresenterProtocol?
     
     var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!

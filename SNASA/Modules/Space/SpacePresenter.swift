@@ -12,7 +12,7 @@ protocol SpacePresenterProtocol: AnyObject {
     func didLoad(space: SpaceEntity?)
 }
 
-class SpacePresenter: SpacePresenterProtocol {
+final class SpacePresenter: SpacePresenterProtocol {
 
     weak var viewController: SpaceControllerProtocol?
     let router: SpaceRouterProtocol

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class SpaceCartView: UIView {
+final class SpaceCartView: UIView {
     
     private lazy var imageView: SDAnimatedImageView = {
         let iv = SDAnimatedImageView()

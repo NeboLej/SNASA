@@ -14,7 +14,7 @@ protocol MainPresenterProtocol: AnyObject {
     func didTapSpace(date: String)
 }
 
-class MainPresenter: MainPresenterProtocol {
+final class MainPresenter: MainPresenterProtocol {
 
     weak var viewController: MainControllerProtocol?
     let router: MainRouterProtocol

@@ -15,7 +15,7 @@ protocol SearchListenerProtocol {
     func search(date: Date)
 }
 
-class SearchController: BaseViewController<SearchView>, SearchControllerProtocol {
+final class SearchController: BaseViewController<SearchView>, SearchControllerProtocol {
     
     var presenter: SearchPresenterProtocol?
     

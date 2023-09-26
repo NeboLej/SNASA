@@ -12,7 +12,7 @@ protocol SpaceRepositoryProtocol {
     func getSpaces(startDate: Date, endDate: Date, completion: @escaping ([SpaceModel]) -> Void)
 }
 
-class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
+final class SpaceRepository: BaseRepository, SpaceRepositoryProtocol {
     
     let url: String
     

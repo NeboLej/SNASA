@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class SpaceView: BaseView {
+final class SpaceView: BaseView {
     
     private lazy var dateLab: UILabel = {
         var label = UILabel()

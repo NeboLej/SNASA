@@ -11,8 +11,7 @@ protocol SpaceRouterProtocol: AnyObject {
     
 }
 
-class SpaceRouter: SpaceRouterProtocol {
+final class SpaceRouter: SpaceRouterProtocol {
     
     weak var viewController: SpaceControllerProtocol?
-    
 }

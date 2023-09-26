@@ -11,7 +11,7 @@ protocol SpaceInteractorProtocol: AnyObject {
     func loadSpace()
 }
 
-class SpaceInteractor: SpaceInteractorProtocol {
+final class SpaceInteractor: SpaceInteractorProtocol {
     
     var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     let spaceDate: String
