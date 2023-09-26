@@ -9,7 +9,7 @@ import UIKit
 
 class MainModuleBuilder {
     
-    static func Build() -> MainController {
+    static func build() -> MainController {
         let interactor = MainInteractor()
         let router = MainRouter()
         let presenter = MainPresenter(router: router, interactor: interactor)

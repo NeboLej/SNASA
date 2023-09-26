@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabbar = UITabBarController()
         
-        let mainVC = MainModuleBuilder.Build()
+        let mainVC = MainModuleBuilder.build()
         mainVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"),selectedImage: UIImage(systemName: "house.fill"))
         let searchVC = SearchModuleBuilder.build()
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "calendar.badge.minus"),selectedImage: UIImage(systemName: "calendar.badge.plus"))
@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc = MainModuleBuilder.Build()
+        let vc = MainModuleBuilder.build()
         window.rootViewController = tabbar
         self.window = window
         window.makeKeyAndVisible()

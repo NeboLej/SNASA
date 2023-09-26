@@ -22,9 +22,9 @@ final class SpaceRepositoryTests: XCTestCase {
         let networkApiMock = NetworkApiMock<SpaceModel>()
         sut = SpaceRepository(api: networkApiMock, url: "")
         
-        var expectedModel = SpaceModel(date: "2000-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url", copyright: "copyright")
+        let expectedModel = SpaceModel(date: "2000-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url", copyright: "copyright")
         networkApiMock.setupResponse(response: expectedModel, delayMilliseconds: 500)
-        var expectation = expectation(description: "api")
+        let expectation = expectation(description: "api")
         var actual: SpaceModel?
         
         //WHEN
@@ -44,7 +44,7 @@ final class SpaceRepositoryTests: XCTestCase {
         sut = SpaceRepository(api: networkApiMock, url: "")
         
         networkApiMock.setupResponse(response: nil, delayMilliseconds: 500)
-        var expectation = expectation(description: "api")
+        let expectation = expectation(description: "api")
         expectation.isInverted = true
         var actual: SpaceModel?
         
@@ -64,9 +64,9 @@ final class SpaceRepositoryTests: XCTestCase {
         let networkApiMock = NetworkApiMock<[SpaceModel]>()
         sut = SpaceRepository(api: networkApiMock, url: "")
         
-        var expectedModels = [SpaceModel(date: "2000-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url", copyright: "copyright")]
+        let expectedModels = [SpaceModel(date: "2000-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url", copyright: "copyright")]
         networkApiMock.setupResponse(response: expectedModels, delayMilliseconds: 500)
-        var expectation = expectation(description: "api")
+        let expectation = expectation(description: "api")
         var actual: [SpaceModel]?
         
         //WHEN
@@ -86,7 +86,7 @@ final class SpaceRepositoryTests: XCTestCase {
         sut = SpaceRepository(api: networkApiMock, url: "")
         
         networkApiMock.setupResponse(response: nil, delayMilliseconds: 500)
-        var expectation = expectation(description: "api")
+        let expectation = expectation(description: "api")
         expectation.isInverted = true
         var actual: [SpaceModel]?
         

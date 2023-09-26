@@ -35,6 +35,9 @@
 		FA2525B02AC388E4005DA63A /* SpaceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525AF2AC388E4005DA63A /* SpaceServiceTests.swift */; };
 		FA2525B22AC38FD8005DA63A /* SpaceRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525B12AC38FD8005DA63A /* SpaceRepositoryTests.swift */; };
 		FA2525B42AC39023005DA63A /* NetworkApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525B32AC39023005DA63A /* NetworkApiMock.swift */; };
+		FA2525B62AC39981005DA63A /* MainModuleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525B52AC39981005DA63A /* MainModuleBuilderTests.swift */; };
+		FA2525B82AC39CC9005DA63A /* SpaceModuleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525B72AC39CC9005DA63A /* SpaceModuleBuilderTests.swift */; };
+		FA2525BA2AC39DD4005DA63A /* SearchModuleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525B92AC39DD4005DA63A /* SearchModuleBuilderTests.swift */; };
 		FA6BE9D92ABF529F0030242B /* NotoSansThaiLooped-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */; };
 		FA6BE9DC2ABF59020030242B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DB2ABF59020030242B /* SearchView.swift */; };
 		FA6BE9DE2ABF590F0030242B /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE9DD2ABF590F0030242B /* SearchController.swift */; };
@@ -124,6 +127,9 @@
 		FA2525AF2AC388E4005DA63A /* SpaceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceServiceTests.swift; sourceTree = "<group>"; };
 		FA2525B12AC38FD8005DA63A /* SpaceRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceRepositoryTests.swift; sourceTree = "<group>"; };
 		FA2525B32AC39023005DA63A /* NetworkApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiMock.swift; sourceTree = "<group>"; };
+		FA2525B52AC39981005DA63A /* MainModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilderTests.swift; sourceTree = "<group>"; };
+		FA2525B72AC39CC9005DA63A /* SpaceModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModuleBuilderTests.swift; sourceTree = "<group>"; };
+		FA2525B92AC39DD4005DA63A /* SearchModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilderTests.swift; sourceTree = "<group>"; };
 		FA6BE9D62ABF50070030242B /* NotoSansThaiLooped-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThaiLooped-Regular.ttf"; sourceTree = "<group>"; };
 		FA6BE9DB2ABF59020030242B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA6BE9DD2ABF590F0030242B /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				FA2525972AC34178005DA63A /* SpacePresenterTests.swift */,
 				FA2525992AC344EC005DA63A /* SpaceInteractorTests.swift */,
 				FA25259B2AC34866005DA63A /* SpaceControllerTests.swift */,
+				FA2525B72AC39CC9005DA63A /* SpaceModuleBuilderTests.swift */,
 			);
 			path = Space;
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 				FA2525A02AC34E64005DA63A /* Mocks */,
 				FA2525A92AC34F7F005DA63A /* SearchInteractorTests.swift */,
 				FA2525AB2AC351EA005DA63A /* SearchPresenterTests.swift */,
+				FA2525B92AC39DD4005DA63A /* SearchModuleBuilderTests.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 				FAD893DB2AC1E9B200669796 /* MainInteractorTests.swift */,
 				FA8C28802AC21AAE008AD368 /* MainRouterTests.swift */,
 				FA25259D2AC3496B005DA63A /* MainControllerTests.swift */,
+				FA2525B52AC39981005DA63A /* MainModuleBuilderTests.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -646,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2525B62AC39981005DA63A /* MainModuleBuilderTests.swift in Sources */,
 				FA2525A62AC34E9E005DA63A /* SearchRouterMock.swift in Sources */,
 				FA9D14332AC1D64E00CF8EC2 /* MainPresenterTests.swift in Sources */,
 				FA2525AA2AC34F7F005DA63A /* SearchInteractorTests.swift in Sources */,
@@ -664,6 +674,7 @@
 				FA25259E2AC3496B005DA63A /* MainControllerTests.swift in Sources */,
 				FAD893DC2AC1E9B200669796 /* MainInteractorTests.swift in Sources */,
 				FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */,
+				FA2525BA2AC39DD4005DA63A /* SearchModuleBuilderTests.swift in Sources */,
 				FA8C28812AC21AAE008AD368 /* MainRouterTests.swift in Sources */,
 				FAD893DE2AC1EA2800669796 /* MainPresenterMock.swift in Sources */,
 				FA2525922AC340AF005DA63A /* SpacePressenterMock.swift in Sources */,
@@ -674,6 +685,7 @@
 				FA2525B42AC39023005DA63A /* NetworkApiMock.swift in Sources */,
 				FA25259C2AC34866005DA63A /* SpaceControllerTests.swift in Sources */,
 				FA2525A82AC34EAD005DA63A /* SearchControllerMock.swift in Sources */,
+				FA2525B82AC39CC9005DA63A /* SpaceModuleBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
