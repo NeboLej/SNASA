@@ -11,7 +11,7 @@ protocol MainRouterProtocol: AnyObject {
     func openSpace(date: String)
 }
 
-class MainRouter: MainRouterProtocol {
+final class MainRouter: MainRouterProtocol {
     
     weak var viewController: MainControllerProtocol?
     

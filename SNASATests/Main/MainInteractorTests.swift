@@ -8,25 +8,24 @@
 import XCTest
 @testable import SNASA
 
-final class MainInteractorTests: XCTestCase {
+final class MainInteractorTests: BaseTestCase {
 
     var sut: MainInteractor?
     var presenterMock: MainPresenterMock?
     var spaceServiceMock: SpaceServiceMock?
     
     override func setUp() {
-        presenterMock = MainPresenterMock()
-        spaceServiceMock = SpaceServiceMock()
-        sut = MainInteractor()
-        
-        sut?.spaceSrvice = spaceServiceMock!
-        sut?.presenter = presenterMock
         super.setUp()
+
+        presenterMock = MainPresenterMock()
+        sut = MainInteractor()
+        spaceServiceMock = injectedMock(for: SpaceServiceProtocol.self)
+        sut?.presenter = presenterMock
     }
 
     override func tearDown() {
-        presenterMock = nil
         spaceServiceMock = nil
+        presenterMock = nil
         sut = nil
         super.tearDown()
     }

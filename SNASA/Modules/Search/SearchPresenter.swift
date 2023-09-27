@@ -12,7 +12,7 @@ protocol SearchPresenterProtocol: AnyObject {
     func didLoadSpace(space: SpaceEntity)
 }
 
-class SearchPresenter: SearchPresenterProtocol {
+final class SearchPresenter: SearchPresenterProtocol {
     
     weak var viewController: SearchControllerProtocol?
     let router: SearchRouterProtocol

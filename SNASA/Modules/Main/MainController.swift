@@ -16,7 +16,7 @@ protocol SpaceListenerProtocol {
     func onClick(space: SpaceEntity)
 }
 
-class MainController: BaseViewController<MainView>, MainControllerProtocol {
+final class MainController: BaseViewController<MainView>, MainControllerProtocol {
     
     var presenter: MainPresenterProtocol?
     

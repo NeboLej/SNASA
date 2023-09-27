@@ -11,11 +11,12 @@ protocol SearchInteractorProtocol: AnyObject {
     func getSpace(by date: Date)
 }
 
-class SearchInteractor: SearchInteractorProtocol {
+final class SearchInteractor: SearchInteractorProtocol {
+    
+    @Injected
+    var spaceService: SpaceServiceProtocol
     
     weak var presenter: SearchPresenterProtocol?
-    
-    var spaceService = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
     
     func getSpace(by date: Date) {
         spaceService.getSpace(date: date) { [ weak self] space in

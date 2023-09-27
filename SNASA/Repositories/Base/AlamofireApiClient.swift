@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class AlamofireApiClient: NetworkApiProtocol {
+final class AlamofireApiClient: NetworkApiProtocol {
     
     func fetchData<M: Decodable>(target: TargetType, responseClass: M.Type, completionHandler: @escaping (Result<M, NSError>) -> Void) {
         

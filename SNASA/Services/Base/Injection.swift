@@ -1,5 +1,5 @@
 //
-//  ServiceFacroty.swift
+//  Injection.swift
 //  SNASA
 //
 //  Created by Nebo on 27.07.2023.
@@ -8,9 +8,30 @@
 import Foundation
 import Swinject
 
-class ServiceFacroty {
+@propertyWrapper struct Injected<Dependency> {
+  let wrappedValue: Dependency
+ 
+  init() {
+    self.wrappedValue = Injection.shared.container.resolve(Dependency.self)!
+  }
+}
+
+final class Injection {
     
-    static let sharedContainer: Container = {
+    static let shared = Injection()
+    
+    var container: Container {
+        get {
+            if _container == nil { _container = buildContainer() }
+            return _container!
+        }
+        set {
+            _container = newValue
+        }
+    }
+    private var _container: Container?
+     
+    private func buildContainer() -> Container {
         let container = Container()
         
         container.register(NetworkApiProtocol.self) { _ in
@@ -28,5 +49,5 @@ class ServiceFacroty {
         }.inObjectScope(.container)
         
         return container
-    }()
+    }
 }

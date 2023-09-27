@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class SpaceCell: UICollectionViewCell {
+final class SpaceCell: UICollectionViewCell {
     
     static let ID = "SpaceCell"
     

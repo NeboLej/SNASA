@@ -11,11 +11,10 @@
 		FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0165FC2A70049D0064950A /* SpaceService.swift */; };
 		FA0165FF2A700BFC0064950A /* SpaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0165FE2A700BFC0064950A /* SpaceRepository.swift */; };
 		FA0166012A700C290064950A /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166002A700C290064950A /* BaseRepository.swift */; };
-		FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166022A71D30A0064950A /* ServiceFacroty.swift */; };
+		FA0166032A71D30A0064950A /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0166022A71D30A0064950A /* Injection.swift */; };
 		FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */; };
 		FA1495BE2A72D40E0033C287 /* AlamofireApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495BD2A72D40E0033C287 /* AlamofireApiClient.swift */; };
 		FA1495C52A72E8340033C287 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C42A72E8340033C287 /* Date+.swift */; };
-		FA1495C72A72F5690033C287 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1495C62A72F5690033C287 /* UIView+.swift */; };
 		FA1A6B9B2A6C4305000AC667 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */; };
 		FA2525902AC340A4005DA63A /* SpaceInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25258F2AC340A4005DA63A /* SpaceInteractorMock.swift */; };
 		FA2525922AC340AF005DA63A /* SpacePressenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2525912AC340AF005DA63A /* SpacePressenterMock.swift */; };
@@ -51,6 +50,8 @@
 		FA9D14362AC1D6B000CF8EC2 /* MainInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14352AC1D6B000CF8EC2 /* MainInteractorMock.swift */; };
 		FA9D14392AC1D72500CF8EC2 /* MainRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */; };
 		FA9D143D2AC1DA8B00CF8EC2 /* MainControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D143C2AC1DA8B00CF8EC2 /* MainControllerMock.swift */; };
+		FAA70C4E2AC4A3C8001AC9C0 /* ContainerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA70C4D2AC4A3C8001AC9C0 /* ContainerMock.swift */; };
+		FAA70C502AC4A742001AC9C0 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA70C4F2AC4A742001AC9C0 /* BaseTestCase.swift */; };
 		FAAEB1F42A5978F200882445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F32A5978F200882445 /* AppDelegate.swift */; };
 		FAAEB1F62A5978F200882445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F52A5978F200882445 /* SceneDelegate.swift */; };
 		FAAEB1F82A5978F200882445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEB1F72A5978F200882445 /* ViewController.swift */; };
@@ -103,11 +104,10 @@
 		FA0165FC2A70049D0064950A /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
 		FA0165FE2A700BFC0064950A /* SpaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceRepository.swift; sourceTree = "<group>"; };
 		FA0166002A700C290064950A /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
-		FA0166022A71D30A0064950A /* ServiceFacroty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacroty.swift; sourceTree = "<group>"; };
+		FA0166022A71D30A0064950A /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		FA1495BB2A72D3740033C287 /* NetworkApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiProtocol.swift; sourceTree = "<group>"; };
 		FA1495BD2A72D40E0033C287 /* AlamofireApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireApiClient.swift; sourceTree = "<group>"; };
 		FA1495C42A72E8340033C287 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		FA1495C62A72F5690033C287 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FA1A6B9A2A6C4305000AC667 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		FA25258F2AC340A4005DA63A /* SpaceInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInteractorMock.swift; sourceTree = "<group>"; };
 		FA2525912AC340AF005DA63A /* SpacePressenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePressenterMock.swift; sourceTree = "<group>"; };
@@ -145,6 +145,8 @@
 		FA9D14382AC1D72500CF8EC2 /* MainRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterMock.swift; sourceTree = "<group>"; };
 		FA9D143C2AC1DA8B00CF8EC2 /* MainControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerMock.swift; sourceTree = "<group>"; };
 		FA9D143F2AC1E51400CF8EC2 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		FAA70C4D2AC4A3C8001AC9C0 /* ContainerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerMock.swift; sourceTree = "<group>"; };
+		FAA70C4F2AC4A742001AC9C0 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		FAAEB1F02A5978F200882445 /* SNASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEB1F32A5978F200882445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAEB1F52A5978F200882445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,7 +233,7 @@
 		FA1495C02A72DA620033C287 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				FA0166022A71D30A0064950A /* ServiceFacroty.swift */,
+				FA0166022A71D30A0064950A /* Injection.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -239,7 +241,6 @@
 		FA1495C12A72E0980033C287 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FA1495C62A72F5690033C287 /* UIView+.swift */,
 				FA1495C42A72E8340033C287 /* Date+.swift */,
 			);
 			path = Extension;
@@ -315,6 +316,7 @@
 				FA2525AD2AC354F5005DA63A /* DateExtensionTests.swift */,
 				FA2525AF2AC388E4005DA63A /* SpaceServiceTests.swift */,
 				FA2525B12AC38FD8005DA63A /* SpaceRepositoryTests.swift */,
+				FAA70C4F2AC4A742001AC9C0 /* BaseTestCase.swift */,
 			);
 			path = SNASATests;
 			sourceTree = "<group>";
@@ -502,6 +504,7 @@
 				FAD893E02AC1EF4300669796 /* SpaceServiceMock.swift */,
 				FAD893E22AC1EF5000669796 /* SpaceRepositoryMock.swift */,
 				FA2525B32AC39023005DA63A /* NetworkApiMock.swift */,
+				FAA70C4D2AC4A3C8001AC9C0 /* ContainerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				FA2525982AC34178005DA63A /* SpacePresenterTests.swift in Sources */,
 				FAD893E12AC1EF4300669796 /* SpaceServiceMock.swift in Sources */,
 				FA2525962AC340CA005DA63A /* SpaceControllerMock.swift in Sources */,
+				FAA70C502AC4A742001AC9C0 /* BaseTestCase.swift in Sources */,
 				FA2525AC2AC351EA005DA63A /* SearchPresenterTests.swift in Sources */,
 				FA2525A42AC34E92005DA63A /* SearchPresenterMock.swift in Sources */,
 				FAD893E32AC1EF5000669796 /* SpaceRepositoryMock.swift in Sources */,
@@ -686,6 +690,7 @@
 				FA25259C2AC34866005DA63A /* SpaceControllerTests.swift in Sources */,
 				FA2525A82AC34EAD005DA63A /* SearchControllerMock.swift in Sources */,
 				FA2525B82AC39CC9005DA63A /* SpaceModuleBuilderTests.swift in Sources */,
+				FAA70C4E2AC4A3C8001AC9C0 /* ContainerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +708,7 @@
 				FAAEB2322A59A4D200882445 /* SpaceModuleBuilder.swift in Sources */,
 				FAAEB23A2A59C9A000882445 /* SpaceCartView.swift in Sources */,
 				FAAEB22E2A59A4B500882445 /* SpacePresenter.swift in Sources */,
-				FA0166032A71D30A0064950A /* ServiceFacroty.swift in Sources */,
+				FA0166032A71D30A0064950A /* Injection.swift in Sources */,
 				FA1495BC2A72D3740033C287 /* NetworkApiProtocol.swift in Sources */,
 				FA6BE9E42ABF59360030242B /* SearchRouter.swift in Sources */,
 				FAAEB2282A59A48800882445 /* SpaceView.swift in Sources */,
@@ -721,7 +726,6 @@
 				FA1495C52A72E8340033C287 /* Date+.swift in Sources */,
 				FAAEB2162A59861F00882445 /* MainPresenter.swift in Sources */,
 				FA0166012A700C290064950A /* BaseRepository.swift in Sources */,
-				FA1495C72A72F5690033C287 /* UIView+.swift in Sources */,
 				FA0165FF2A700BFC0064950A /* SpaceRepository.swift in Sources */,
 				FAC875C32ABC5F830084AFB4 /* Color+.swift in Sources */,
 				FA0165FD2A70049D0064950A /* SpaceService.swift in Sources */,

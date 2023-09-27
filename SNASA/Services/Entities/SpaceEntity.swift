@@ -11,7 +11,7 @@ protocol SpaceProtocol {
     
 }
 
-class SpaceEntity: Hashable {
+final class SpaceEntity: Hashable {
     let date: String
     let explanation: String
     let hdurl: String
