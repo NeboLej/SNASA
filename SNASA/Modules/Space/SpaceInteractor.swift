@@ -13,7 +13,9 @@ protocol SpaceInteractorProtocol: AnyObject {
 
 final class SpaceInteractor: SpaceInteractorProtocol {
     
-    var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
+    @Injected
+    var spaceService: SpaceServiceProtocol
+    
     let spaceDate: String
     
     weak var presenter: SpacePresenterProtocol?
@@ -23,7 +25,7 @@ final class SpaceInteractor: SpaceInteractorProtocol {
     }
     
     func loadSpace() {
-        let space = spaceSrvice.spaces.first(where: { $0.date == spaceDate })
+        let space = spaceService.spaces.first(where: { $0.date == spaceDate })
         presenter?.didLoad(space: space)
     }
 }

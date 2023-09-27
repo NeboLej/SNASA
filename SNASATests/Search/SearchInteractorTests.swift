@@ -8,33 +8,33 @@
 import XCTest
 @testable import SNASA
 
-final class SearchInteractorTests: XCTestCase {
+final class SearchInteractorTests: BaseTestCase {
 
     var sut: SearchInteractor?
     var presenter: SearchPresenterMock?
-    var spaceService: SpaceServiceMock?
+    var spaceServiceMock: SpaceServiceMock?
     
     override func setUp() {
-        presenter = SearchPresenterMock()
-        spaceService = SpaceServiceMock()
-        sut = SearchInteractor()
-        sut?.spaceService = spaceService!
-        sut?.presenter = presenter
         super.setUp()
+        
+        presenter = SearchPresenterMock()
+        spaceServiceMock = injectedMock(for: SpaceServiceProtocol.self)
+        sut = SearchInteractor()
+        sut?.presenter = presenter
     }
     
     override func tearDown() {
         presenter = nil
-        spaceService = nil
+        spaceServiceMock = nil
         sut = nil
         super.tearDown()
     }
     
     func testLoadSpaceSuccess() {
         //GIVEN
-        var expectationDate = Date()
+        let expectationDate = Date()
         let expectationEntity = SpaceEntity(date: Date().toSimpleDate(), explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url")
-        spaceService?.setupLoadSpace(entity: expectationEntity, delayMilliseconds: 500)
+        spaceServiceMock?.setupLoadSpace(entity: expectationEntity, delayMilliseconds: 500)
         
         //WHEN
         sut?.getSpace(by: expectationDate)

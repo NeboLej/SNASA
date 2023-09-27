@@ -15,16 +15,17 @@ protocol MainInteractorProtocol: AnyObject {
 final class MainInteractor: MainInteractorProtocol {
     weak var presenter: MainPresenterProtocol?
     
-    var spaceSrvice = ServiceFacroty.sharedContainer.resolve(SpaceServiceProtocol.self)!
+    @Injected
+    var spaceService: SpaceServiceProtocol
     
     func loadTodaySpace() {
-        spaceSrvice.getSpace(date: Date()) { [weak self] space in
+        spaceService.getSpace(date: Date()) { [weak self] space in
             self?.presenter?.didLoadTodaySpace(title: space.title, image: space.hdurl)
         }
     }
     
     func loadLastWeekSpaces() {
-        spaceSrvice.getSpaces(startDate: Date().addDay(day: -7), endDate: Date()) { [weak self] spaces in
+        spaceService.getSpaces(startDate: Date().addDay(day: -7), endDate: Date()) { [weak self] spaces in
             self?.presenter?.didLoadLastWeekSpaces(spaces: spaces)
         }
     }

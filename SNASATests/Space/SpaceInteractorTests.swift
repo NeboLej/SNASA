@@ -8,25 +8,25 @@
 import XCTest
 @testable import SNASA
 
-final class SpaceInteractorTests: XCTestCase {
+final class SpaceInteractorTests: BaseTestCase {
 
     var sut: SpaceInteractor?
     var presenter: SpacePresenterMock?
-    var spaceService: SpaceServiceMock?
     var spaceDate = "2000-01-01"
+    var spaceServiceMock: SpaceServiceMock?
     
     override func setUp() {
+        super.setUp()
+        
         presenter = SpacePresenterMock()
         sut = SpaceInteractor(spaceDate: spaceDate)
-        spaceService = SpaceServiceMock()
+        spaceServiceMock = injectedMock(for: SpaceServiceProtocol.self)
         sut?.presenter = presenter
-        sut?.spaceSrvice = spaceService!
-        super.setUp()
     }
     
     override func tearDown() {
         presenter = nil
-        spaceService = nil
+        spaceServiceMock = nil
         sut = nil
         super.tearDown()
     }
@@ -34,7 +34,7 @@ final class SpaceInteractorTests: XCTestCase {
     func testloadSpaceByDateSuccess() {
         //GIVEN
         let expectationEntity = SpaceEntity(date: spaceDate, explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url")
-        spaceService?.spaces.insert(expectationEntity)
+        spaceServiceMock?.spaces.insert(expectationEntity)
         presenter?.spaceDate = nil
         
         //WHEN
@@ -47,7 +47,7 @@ final class SpaceInteractorTests: XCTestCase {
     func testloadSpaceByDateFailure() {
         //GIVEN
         let expectationEntity = SpaceEntity(date: "01-01-01", explanation: "explanation", hdurl: "hdurl", mediaType: "mediaType", serviceVersion: "serviceVersion", title: "title", url: "url")
-        spaceService?.spaces.insert(expectationEntity)
+        spaceServiceMock?.spaces.insert(expectationEntity)
         presenter?.spaceDate = nil
         
         //WHEN
