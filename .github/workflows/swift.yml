@@ -16,7 +16,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pods-
     - name: CocoaPod Install
-      run: pod install
+      run: arch -x86_64 pod install
     - name: Build
       run: xcodebuild -workspace SNASA.xcworkspace -scheme SNASA -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14'
     - name: Test
