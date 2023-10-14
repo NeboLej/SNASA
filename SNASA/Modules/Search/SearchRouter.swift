@@ -7,12 +7,9 @@
 
 import Foundation
 
-protocol SearchRouterProtocol: AnyObject {
-    
-}
+protocol SearchRouterProtocol: AnyObject {}
 
 final class SearchRouter: SearchRouterProtocol {
     
     weak var viewController: SearchControllerProtocol?
 }
-
