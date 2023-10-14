@@ -20,4 +20,4 @@ jobs:
     - name: Build
       run: xcodebuild -workspace SNASA.xcworkspace -scheme SNASA -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14'
     - name: Test
-      run: xcodebuild -workspace SNASA.xcworkspace -scheme SNASATests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14' test
+      run: xcodebuild test -scheme SNASA -project SNASA.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2' 
