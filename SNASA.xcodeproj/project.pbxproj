@@ -762,6 +762,7 @@
 /* Begin XCBuildConfiguration section */
 		FA9D142E2AC1D55400CF8EC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5753A145351DC37173FDEDF3 /* Pods-SNASA.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -780,6 +781,7 @@
 		};
 		FA9D142F2AC1D55400CF8EC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE9BC681BD53FDF8B306378 /* Pods-SNASA.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
