@@ -15,14 +15,14 @@ jobs:
         matrix: 
           destination: ['platform=iOS Simulator,OS=16.4,name=iPhone 14']
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Setup Cocoapods
         uses: maxim-lobanov/setup-cocoapods@v1
         with:
-          podfile-path: SNASA/Podfile.lock
-    
+          podfile-path: Podfile.lock
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Build
         run: |
           xcodebuild clean build -project SNASA.xcodeproj -scheme SNASA -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
