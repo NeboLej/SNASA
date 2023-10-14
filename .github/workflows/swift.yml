@@ -16,7 +16,7 @@ jobs:
           destination: ['platform=iOS Simulator,OS=16.4,name=iPhone 14']
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
       - name: Build
         run: |
           xcodebuild clean build -project SNASA.xcodeproj -scheme SNASA -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
