@@ -5,24 +5,28 @@ name: Swift
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
 
-    runs-on: macos-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS Simulator,OS=16.0,name=iPhone 14']
-          
+    runs-on: macos-12
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Build and test
-        run: |
-          cd SNASA
-          xcodebuild clean test -project SNASA.xcodeproj -scheme Texstyle -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-        env:
-         destination: ${{ matrix.destination }}
+    - uses: actions/checkout@v3
+
+    - name: Xcode Setup
+      with:
+        xcode-version: '14.1'
+
+    - name: Build
+      run: |
+        cd GitHubActions
+        xcodebuild build -project SNASA.xcodeproj -scheme SNASA clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
+
+    - name: Run tests
+      run: |
+        cd GitHubActions
+        xcodebuild test -project SNASA.xcodeproj -scheme SNASA clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
