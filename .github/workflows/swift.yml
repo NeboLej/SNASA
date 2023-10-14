@@ -24,10 +24,10 @@ jobs:
 
     - name: Build
       run: |
-        cd GitHubActions
+        cd SNASA
         xcodebuild build -project SNASA.xcodeproj -scheme SNASA clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
 
     - name: Run tests
       run: |
-        cd GitHubActions
+        cd SNASA
         xcodebuild test -project SNASA.xcodeproj -scheme SNASA clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
